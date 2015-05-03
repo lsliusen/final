@@ -1,0 +1,21 @@
+Recipe
+  title: string
+  photo_url: string
+  instruction: string
+  date: string
+  stars: integer
+
+Review
+  title: string
+  comment: text
+  rating: integer
+  date: string
+  recipe_id: integer
+
+Tag
+  name: string
+
+Category
+  recipe_id: integer
+  tag_id: integer
+

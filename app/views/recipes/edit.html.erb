@@ -1,0 +1,28 @@
+<!-- <form action="/recipes/<%= @recipe.id %>/update"> -->
+<%= form_tag "/recipes/#{@recipe.id}", :method => 'patch' do %>
+
+  <div>
+    <label for="title">Title:</label>
+    <input size="40" name="title" id="title" value="<%= @recipe.title %>">
+  </div>
+
+  <div>
+    <label for="photo_url">Link to Photo:</label>
+    <input size="40" name="photo_url" value="<%= @recipe.photo_url %>" id="photo_url" type="url">
+  </div>
+
+  <div>
+      <textarea cols="80" rows="5" name="instruction"><%= @recipe.instruction %></textarea>
+  </div>
+
+
+  <!-- TODO : allow user to choose tags -->
+
+  <input type="submit" name="commit" value="Update recipe">
+
+<% end %>
+
+
+
+
+

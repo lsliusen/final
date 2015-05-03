@@ -1,0 +1,18 @@
+<h2><%= @recipe.title %></h2>
+
+<p>
+  <span class="rating">Rated: <%= @recipe.stars %></span>
+  "created at "
+  <%= @recipe.date %>
+  <% @recipe.stars.times do %>
+    &#9733;
+  <% end %>
+  <% (5 - @recipe.stars).times do %>
+    &#9734;
+  <% end %>
+
+</p>
+
+<%= image_tag @recipe.photo_url %>
+
+<p><%= @recipe.instruction %></p>

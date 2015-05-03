@@ -1,0 +1,1597 @@
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "recipes" ADD "title" varchar
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "recipes" ADD "photo_url" varchar[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "recipes" ADD "instruction" varchar
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "recipes" ADD "date" varchar[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "reviews" ADD "title" varchar[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "reviews" ADD "comment" text
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "reviews" ADD "rating" integer[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "reviews" ADD "date" varchar
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "reviews" ADD "recipe_id" integer[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX "index_reviews_on_recipe_id" ON "reviews" ("recipe_id")[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "tags" ADD "name" varchar[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "categories" ADD "recipe_id" integer[0m
+  [1m[35m (0.7ms)[0m  CREATE  INDEX "index_categories_on_recipe_id" ON "categories" ("recipe_id")
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "categories" ADD "tag_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_categories_on_tag_id" ON "categories" ("tag_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.8ms)[0m  DELETE FROM "recipes"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "reviews"[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "tags"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "recipes" ("title", "photo_url", "instruction", "date") VALUES (?, ?, ?, ?)[0m  [["title", "Pancake"], ["photo_url", ""], ["instruction", "pancake_instruction"], ["date", "2015-05-01 00:00:00"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("title", "photo_url", "instruction", "date") VALUES (?, ?, ?, ?)  [["title", "Omelette"], ["photo_url", ""], ["instruction", "omelette_instruction"], ["date", "2015-05-01 01:00:00"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("title", "comment", "rating", "date", "recipe_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "OK"], ["comment", "Good."], ["rating", 3], ["date", "2015-05-01 02:00:00"], ["recipe_id", 1]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "breakfast"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "egg"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "sweet"]]
+  [1m[36m (0.4ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2015-05-02 20:52:19 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 21ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipe" for ::1 at 2015-05-02 20:52:55 -0500
+
+ActionController::RoutingError (No route matches [GET] "/recipe"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (17.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (84.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (47.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (107.4ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 20:56:46 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.7ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.0ms)
+
+NoMethodError (undefined method `stars=' for #<Recipe:0x007ff459aa2378>):
+  app/controllers/recipes_controller.rb:12:in `block in index'
+  app/controllers/recipes_controller.rb:11:in `index'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (37.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (82.6ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 20:59:10 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.3ms)
+
+ActiveModel::MissingAttributeError (can't write unknown attribute `stars`):
+  app/controllers/recipes_controller.rb:12:in `block in index'
+  app/controllers/recipes_controller.rb:11:in `index'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (34.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (79.5ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:01:24 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.3ms)
+
+NoMethodError (undefined method `stars=' for #<Recipe:0x007fe99c9900b0>):
+  app/controllers/recipes_controller.rb:12:in `block in index'
+  app/controllers/recipes_controller.rb:11:in `index'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (79.4ms)
+  [1m[36m (1.4ms)[0m  [1mALTER TABLE "recipes" ADD "stars" integer[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.4ms)[0m  DELETE FROM "recipes"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "reviews"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "tags"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("title", "photo_url", "instruction", "date") VALUES (?, ?, ?, ?)[0m  [["title", "Pancake"], ["photo_url", ""], ["instruction", "pancake_instruction"], ["date", "2015-05-01 00:00:00"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipes" ("title", "photo_url", "instruction", "date") VALUES (?, ?, ?, ?)  [["title", "Omelette"], ["photo_url", ""], ["instruction", "omelette_instruction"], ["date", "2015-05-01 01:00:00"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("title", "comment", "rating", "date", "recipe_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "OK"], ["comment", "Good."], ["rating", 3], ["date", "2015-05-01 02:00:00"], ["recipe_id", 1]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "breakfast"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "egg"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "sweet"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:02:00 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 1403ms (Views: 1358.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:02:02 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:04:10 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 179ms (Views: 137.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:04:37 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:07:29 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/4" for ::1 at 2015-05-02 21:07:32 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered recipes/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `times' for nil:NilClass):
+    4:   <span class="rating">Rated: <%= @recipe.stars %></span>
+    5:   "created at "
+    6:   <%= @recipe.date %>
+    7:   <% @recipe.stars.times do %>
+    8:     &#9733;
+    9:   <% end %>
+   10:   <% (10 - @recipe.stars).times do %>
+  app/views/recipes/show.html.erb:7:in `_app_views_recipes_show_html_erb___2623546584501915920_70329481416300'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (37.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (85.0ms)
+
+
+Started GET "/recipes/4" for ::1 at 2015-05-02 21:07:32 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered recipes/show.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `times' for nil:NilClass):
+    4:   <span class="rating">Rated: <%= @recipe.stars %></span>
+    5:   "created at "
+    6:   <%= @recipe.date %>
+    7:   <% @recipe.stars.times do %>
+    8:     &#9733;
+    9:   <% end %>
+   10:   <% (10 - @recipe.stars).times do %>
+  app/views/recipes/show.html.erb:7:in `_app_views_recipes_show_html_erb___2623546584501915920_70329519161400'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (38.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (86.0ms)
+
+
+Started GET "/recipes/4" for ::1 at 2015-05-02 21:09:41 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered recipes/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 185ms (Views: 139.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-02 21:09:49 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-02 21:17:33 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 26ms (Views: 20.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes/4/edit" for ::1 at 2015-05-02 21:17:34 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered recipes/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/4/edit" for ::1 at 2015-05-02 21:18:07 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered recipes/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/4/edit" for ::1 at 2015-05-02 21:18:22 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered recipes/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/recipes/4" for ::1 at 2015-05-02 21:18:31 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lkozDkT4aKu+t4YEY0Iy7KCs8+DLX3eeRuyDbiS6gdEnb6OCXK1T0xSMuBvZe33YFp6TWznE/AGeUgVPowNvgg==", "title"=>"Omelette1", "photo_url"=>"", "instruction"=>"omelette_instruction", "commit"=>"Update recipe", "id"=>"4"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "recipes" SET "stars" = ?, "title" = ?, "date" = ? WHERE "recipes"."id" = ?[0m  [["stars", 3], ["title", "Omelette1"], ["date", "2015-05-02 21:18:31"], ["id", 4]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:18:31 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/4/edit" for ::1 at 2015-05-02 21:18:33 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered recipes/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/recipes/4" for ::1 at 2015-05-02 21:18:35 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KIsMmQerbUaN5aIOvPOaqZtRzzbOrLIhsNGprSYMmg+ZrpwVH/5WPifenBEGytWdLWOvjTw3Ob5oby+MobV0XA==", "title"=>"Omelette1", "photo_url"=>"", "instruction"=>"omelette_instruction22", "commit"=>"Update recipe", "id"=>"4"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "recipes" SET "date" = ?, "instruction" = ? WHERE "recipes"."id" = ?  [["date", "2015-05-02 21:18:35"], ["instruction", "omelette_instruction22"], ["id", 4]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:18:35 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/4" for ::1 at 2015-05-02 21:18:44 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered recipes/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/recipes/4" for ::1 at 2015-05-02 21:19:22 -0500
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GpgoWsikww5dKEAO1VqYxw9TXJV3ZeKIyWMY0yHniTyrvbjW0PH4dvcTfhFvY9fzuWE8LoX+aRcR3Z7ypl5nbw==", "id"=>"4"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSQL (1.3ms)[0m  DELETE FROM "recipes" WHERE "recipes"."id" = ?  [["id", 4]]
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 3ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:19:22 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:19:23 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:19:24 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-02 21:19:26 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:6: syntax error, unexpected ')'
+...uffer.append=( select_tag ... );@output_buffer.safe_append='
+...                               ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:8: syntax error, unexpected '<', expecting ')'
+    <!-- <label for="title">Title:</label>
+     ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:8: syntax error, unexpected '<'
+    <!-- <label for="title">Title:</label>
+          ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:8: syntax error, unexpected tLABEL
+    <!-- <label for="title">Title:</label>
+                                  ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:10: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:12: syntax error, unexpected '<'
+  <div>
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:13: syntax error, unexpected tLABEL
+    <label for="year">Year:</label>
+                           ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:15: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:17: syntax error, unexpected '<'
+  <div>
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:18: syntax error, unexpected ( arg, expecting keyword_do or '{' or '('
+    <label for="runtime">Runtime (minutes)</label>
+                                  ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:20: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:22: syntax error, unexpected '<'
+  <div>
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:23: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+    <label for="poster_url">Link to Poster:</label>
+                                   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:25: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:27: syntax error, unexpected '<'
+  <!-- stars: integer
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:27: syntax error, unexpected tLABEL
+  <!-- stars: integer
+             ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:28: syntax error, unexpected ':', expecting ')'
+  runtime: integer
+          ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:29: syntax error, unexpected ':', expecting ')'
+  plot: text
+       ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:30: syntax error, unexpected ':', expecting ')'
+  poster_url: string
+             ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:31: syntax error, unexpected ':', expecting ')'
+  director_id: integer
+              ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:32: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:34: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+    <label>MPAA Rated: </label>
+                      ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:36: unknown regexp options - pt
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:37: syntax error, unexpected '<'
+      <option>G</option>
+       ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:38: unknown regexp options - pt
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:39: syntax error, unexpected '<'
+      <option>PG-13</option>
+       ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:40: unknown regexp options - pt
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:41: syntax error, unexpected '<'
+    </select>
+     ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:42: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:44: syntax error, unexpected '<'
+  <div>
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:45: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+    <label for="stars">Star Rating:</label>
+                                   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:47: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:49: syntax error, unexpected '<'
+  <div>
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <textarea cols="80" rows="5" placeholder="It was a da...
+                            ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+... cols="80" rows="5" placeholder="It was a dark and stormy ni...
+...                               ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+...dark and stormy night...." name="plot"></textarea>
+...                               ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:50: syntax error, unexpected '<'
+...stormy night...." name="plot"></textarea>
+...                               ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:51: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:53: syntax error, unexpected '<'
+  <div>
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:54: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+    <label for="director_id">Directed By: </label>
+                                         ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:59: unknown regexp options - pt
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:62: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:64: syntax error, unexpected '<'
+  <input type="submit" name="commit" value="Add recipe">
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <input type="submit" name="commit" value="Add recipe">
+                           ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <input type="submit" name="commit" value="Add recipe">
+                                          ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:72: unterminated string meets end of file
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:72: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/recipes/new.html.erb:6: syntax error, unexpected ')'
+  app/views/recipes/new.html.erb:8: syntax error, unexpected '<', expecting ')'
+  app/views/recipes/new.html.erb:8: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:8: syntax error, unexpected tLABEL
+  app/views/recipes/new.html.erb:10: unknown regexp options - dv
+  app/views/recipes/new.html.erb:12: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:13: syntax error, unexpected tLABEL
+  app/views/recipes/new.html.erb:15: unknown regexp options - dv
+  app/views/recipes/new.html.erb:17: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:18: syntax error, unexpected ( arg, expecting keyword_do or '{' or '('
+  app/views/recipes/new.html.erb:20: unknown regexp options - dv
+  app/views/recipes/new.html.erb:22: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:23: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/views/recipes/new.html.erb:25: unknown regexp options - dv
+  app/views/recipes/new.html.erb:27: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:27: syntax error, unexpected tLABEL
+  app/views/recipes/new.html.erb:28: syntax error, unexpected ':', expecting ')'
+  app/views/recipes/new.html.erb:29: syntax error, unexpected ':', expecting ')'
+  app/views/recipes/new.html.erb:30: syntax error, unexpected ':', expecting ')'
+  app/views/recipes/new.html.erb:31: syntax error, unexpected ':', expecting ')'
+  app/views/recipes/new.html.erb:32: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+  app/views/recipes/new.html.erb:34: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+  app/views/recipes/new.html.erb:36: unknown regexp options - pt
+  app/views/recipes/new.html.erb:37: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:38: unknown regexp options - pt
+  app/views/recipes/new.html.erb:39: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:40: unknown regexp options - pt
+  app/views/recipes/new.html.erb:41: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:42: unknown regexp options - dv
+  app/views/recipes/new.html.erb:44: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:45: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+  app/views/recipes/new.html.erb:47: unknown regexp options - dv
+  app/views/recipes/new.html.erb:49: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/recipes/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/recipes/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/recipes/new.html.erb:50: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:51: unknown regexp options - dv
+  app/views/recipes/new.html.erb:53: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:54: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+  app/views/recipes/new.html.erb:59: unknown regexp options - pt
+  app/views/recipes/new.html.erb:62: unknown regexp options - dv
+  app/views/recipes/new.html.erb:64: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/recipes/new.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/recipes/new.html.erb:72: unterminated string meets end of file
+  app/views/recipes/new.html.erb:72: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (85.5ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-02 21:19:27 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:6: syntax error, unexpected ')'
+...uffer.append=( select_tag ... );@output_buffer.safe_append='
+...                               ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:8: syntax error, unexpected '<', expecting ')'
+    <!-- <label for="title">Title:</label>
+     ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:8: syntax error, unexpected '<'
+    <!-- <label for="title">Title:</label>
+          ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:8: syntax error, unexpected tLABEL
+    <!-- <label for="title">Title:</label>
+                                  ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:10: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:12: syntax error, unexpected '<'
+  <div>
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:13: syntax error, unexpected tLABEL
+    <label for="year">Year:</label>
+                           ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:15: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:17: syntax error, unexpected '<'
+  <div>
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:18: syntax error, unexpected ( arg, expecting keyword_do or '{' or '('
+    <label for="runtime">Runtime (minutes)</label>
+                                  ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:20: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:22: syntax error, unexpected '<'
+  <div>
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:23: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+    <label for="poster_url">Link to Poster:</label>
+                                   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:25: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:27: syntax error, unexpected '<'
+  <!-- stars: integer
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:27: syntax error, unexpected tLABEL
+  <!-- stars: integer
+             ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:28: syntax error, unexpected ':', expecting ')'
+  runtime: integer
+          ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:29: syntax error, unexpected ':', expecting ')'
+  plot: text
+       ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:30: syntax error, unexpected ':', expecting ')'
+  poster_url: string
+             ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:31: syntax error, unexpected ':', expecting ')'
+  director_id: integer
+              ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:32: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:34: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+    <label>MPAA Rated: </label>
+                      ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:36: unknown regexp options - pt
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:37: syntax error, unexpected '<'
+      <option>G</option>
+       ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:38: unknown regexp options - pt
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:39: syntax error, unexpected '<'
+      <option>PG-13</option>
+       ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:40: unknown regexp options - pt
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:41: syntax error, unexpected '<'
+    </select>
+     ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:42: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:44: syntax error, unexpected '<'
+  <div>
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:45: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+    <label for="stars">Star Rating:</label>
+                                   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:47: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:49: syntax error, unexpected '<'
+  <div>
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <textarea cols="80" rows="5" placeholder="It was a da...
+                            ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+... cols="80" rows="5" placeholder="It was a dark and stormy ni...
+...                               ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+...dark and stormy night...." name="plot"></textarea>
+...                               ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:50: syntax error, unexpected '<'
+...stormy night...." name="plot"></textarea>
+...                               ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:51: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:53: syntax error, unexpected '<'
+  <div>
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:54: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+    <label for="director_id">Directed By: </label>
+                                         ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:59: unknown regexp options - pt
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:62: unknown regexp options - dv
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:64: syntax error, unexpected '<'
+  <input type="submit" name="commit" value="Add recipe">
+   ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <input type="submit" name="commit" value="Add recipe">
+                           ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <input type="submit" name="commit" value="Add recipe">
+                                          ^
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:72: unterminated string meets end of file
+/Users/liusen/work/courses/web/final/app/views/recipes/new.html.erb:72: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/recipes/new.html.erb:6: syntax error, unexpected ')'
+  app/views/recipes/new.html.erb:8: syntax error, unexpected '<', expecting ')'
+  app/views/recipes/new.html.erb:8: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:8: syntax error, unexpected tLABEL
+  app/views/recipes/new.html.erb:10: unknown regexp options - dv
+  app/views/recipes/new.html.erb:12: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:13: syntax error, unexpected tLABEL
+  app/views/recipes/new.html.erb:15: unknown regexp options - dv
+  app/views/recipes/new.html.erb:17: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:18: syntax error, unexpected ( arg, expecting keyword_do or '{' or '('
+  app/views/recipes/new.html.erb:20: unknown regexp options - dv
+  app/views/recipes/new.html.erb:22: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:23: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/views/recipes/new.html.erb:25: unknown regexp options - dv
+  app/views/recipes/new.html.erb:27: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:27: syntax error, unexpected tLABEL
+  app/views/recipes/new.html.erb:28: syntax error, unexpected ':', expecting ')'
+  app/views/recipes/new.html.erb:29: syntax error, unexpected ':', expecting ')'
+  app/views/recipes/new.html.erb:30: syntax error, unexpected ':', expecting ')'
+  app/views/recipes/new.html.erb:31: syntax error, unexpected ':', expecting ')'
+  app/views/recipes/new.html.erb:32: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+  app/views/recipes/new.html.erb:34: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+  app/views/recipes/new.html.erb:36: unknown regexp options - pt
+  app/views/recipes/new.html.erb:37: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:38: unknown regexp options - pt
+  app/views/recipes/new.html.erb:39: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:40: unknown regexp options - pt
+  app/views/recipes/new.html.erb:41: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:42: unknown regexp options - dv
+  app/views/recipes/new.html.erb:44: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:45: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+  app/views/recipes/new.html.erb:47: unknown regexp options - dv
+  app/views/recipes/new.html.erb:49: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/recipes/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/recipes/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/recipes/new.html.erb:50: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:51: unknown regexp options - dv
+  app/views/recipes/new.html.erb:53: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:54: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+  app/views/recipes/new.html.erb:59: unknown regexp options - pt
+  app/views/recipes/new.html.erb:62: unknown regexp options - dv
+  app/views/recipes/new.html.erb:64: syntax error, unexpected '<'
+  app/views/recipes/new.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/recipes/new.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/recipes/new.html.erb:72: unterminated string meets end of file
+  app/views/recipes/new.html.erb:72: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (35.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (78.6ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:24:16 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/3/edit" for ::1 at 2015-05-02 21:24:18 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered recipes/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-02 21:24:25 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-02 21:25:32 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-02 21:25:33 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-02 21:25:52 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2015-05-02 21:25:57 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yNL54x1AtPHFIvYKJjXH6DUoKAnEeHroEwqAUQ6KHt5592lvBRWPiW8ZyBWcDIjcgxpIsjbj8XfLtAZwiTPwjQ==", "title"=>"a", "phtot_url"=>"s", "instruction"=>"wef", "commit"=>"Add recipe"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `new' for nil:NilClass):
+  app/controllers/recipes_controller.rb:35:in `create'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (35.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (81.6ms)
+
+
+Started POST "/recipes" for ::1 at 2015-05-02 21:26:28 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yNL54x1AtPHFIvYKJjXH6DUoKAnEeHroEwqAUQ6KHt5592lvBRWPiW8ZyBWcDIjcgxpIsjbj8XfLtAZwiTPwjQ==", "title"=>"a", "phtot_url"=>"s", "instruction"=>"wef", "commit"=>"Add recipe"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("title", "instruction") VALUES (?, ?)[0m  [["title", "a"], ["instruction", "wef"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:26:28 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-02 21:26:33 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2015-05-02 21:26:39 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4K9nUT+2lu4dQbcVkdNcS6YD/t7T5Ab6ks9dWbke4WpRivfdJ+Otlrd6iQor6hN/EDGeZSF/jWVKcdt4PqcPOQ==", "title"=>"A", "phtot_url"=>"s", "instruction"=>"b", "commit"=>"Add recipe"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("title", "instruction") VALUES (?, ?)  [["title", "A"], ["instruction", "b"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:26:39 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/6" for ::1 at 2015-05-02 21:26:41 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered recipes/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/recipes/5" for ::1 at 2015-05-02 21:27:12 -0500
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QUopHkx65s2WoEkPry3/BZtjrqsXspyDghzmG5+O4Hjwb7mSVC/dtTybdxAVFLAxLVHOEOUpFxxaomA6GDcOKw==", "id"=>"5"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (1.4ms)[0m  DELETE FROM "recipes" WHERE "recipes"."id" = ?  [["id", 5]]
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:27:12 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:28:32 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:29:15 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:30:15 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "recipes"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "reviews"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "tags"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("title", "photo_url", "instruction", "date") VALUES (?, ?, ?, ?)[0m  [["title", "Pancake"], ["photo_url", "http://img5.imgtn.bdimg.com/it/u=1418365513,387621520&fm=21&gp=0.jpg"], ["instruction", "pancake_instruction"], ["date", "2015-05-01 00:00:00"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("title", "photo_url", "instruction", "date") VALUES (?, ?, ?, ?)  [["title", "Omelette"], ["photo_url", ""], ["instruction", "omelette_instruction"], ["date", "2015-05-01 01:00:00"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("title", "comment", "rating", "date", "recipe_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "OK"], ["comment", "Good."], ["rating", 3], ["date", "2015-05-01 02:00:00"], ["recipe_id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "breakfast"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "egg"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "sweet"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:30:31 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 203ms (Views: 159.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:30:32 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/7" for ::1 at 2015-05-02 21:30:34 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered recipes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 43ms (Views: 35.6ms | ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (2.1ms)[0m  DELETE FROM "recipes"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "reviews"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "tags"
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("title", "photo_url", "instruction", "date") VALUES (?, ?, ?, ?)[0m  [["title", "Pancake"], ["photo_url", "http://img5.imgtn.bdimg.com/it/u=1418365513,387621520&fm=21&gp=0.jpg"], ["instruction", "pancake_instruction"], ["date", "2015-05-01 00:00:00"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("title", "photo_url", "instruction", "date") VALUES (?, ?, ?, ?)  [["title", "Omelette"], ["photo_url", "http://wishfulchef.cdn.kinsta.com/wp-content/uploads/2011/09/SalmonPotatoOmelette.jpg"], ["instruction", "omelette_instruction"], ["date", "2015-05-01 01:00:00"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("title", "comment", "rating", "date", "recipe_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "OK"], ["comment", "Good."], ["rating", 3], ["date", "2015-05-01 02:00:00"], ["recipe_id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "breakfast"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "egg"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "sweet"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/recipes/8" for ::1 at 2015-05-02 21:32:16 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 8]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+NoMethodError (undefined method `stars=' for nil:NilClass):
+  app/controllers/recipes_controller.rb:8:in `find_recipe'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (42.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (96.7ms)
+
+
+Started GET "/recipes/8" for ::1 at 2015-05-02 21:32:16 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 8]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+NoMethodError (undefined method `stars=' for nil:NilClass):
+  app/controllers/recipes_controller.rb:8:in `find_recipe'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (35.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (83.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.6ms)[0m  DELETE FROM "recipes"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "reviews"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "tags"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("title", "photo_url", "instruction", "date") VALUES (?, ?, ?, ?)[0m  [["title", "Pancake"], ["photo_url", "http://img5.imgtn.bdimg.com/it/u=1418365513,387621520&fm=21&gp=0.jpg"], ["instruction", "pancake_instruction"], ["date", "2015-05-01 00:00:00"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("title", "photo_url", "instruction", "date") VALUES (?, ?, ?, ?)  [["title", "Omelette"], ["photo_url", "http://wishfulchef.cdn.kinsta.com/wp-content/uploads/2011/09/SalmonPotatoOmelette.jpg"], ["instruction", "omelette_instruction"], ["date", "2015-05-01 01:00:00"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("title", "comment", "rating", "date", "recipe_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "OK"], ["comment", "Good."], ["rating", 3], ["date", "2015-05-01 02:00:00"], ["recipe_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "breakfast"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "egg"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "sweet"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:33:12 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.9ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 177ms (Views: 134.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/recipes/12" for ::1 at 2015-05-02 21:33:13 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered recipes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 16.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/11" for ::1 at 2015-05-02 21:33:15 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered recipes/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-02 21:33:19 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2015-05-02 21:33:25 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q+la0HEVJh97/Cqd+5s7E6r6L9Zeb5zMitZidgxvbv8azMpcaUAdZ9HHFIJBonQnHMhPbaz0F1NSaORXi9aArA==", "title"=>"wef", "phtot_url"=>"fwe", "instruction"=>"gew", "commit"=>"Add recipe"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("title", "instruction") VALUES (?, ?)  [["title", "wef"], ["instruction", "gew"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:33:25 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/13" for ::1 at 2015-05-02 21:33:27 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 13]]
+  Rendered recipes/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/13/edit" for ::1 at 2015-05-02 21:33:29 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered recipes/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/recipes/13" for ::1 at 2015-05-02 21:33:36 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6X+HtKDWW9bqJwhivuB0BUCvwjzJVZ6qDa13fyJE6TxYWhc4uINgrkAcNn0E2Tsx9p2ihzvOFTXVE/Fepf0Hbw==", "title"=>"wef", "photo_url"=>"", "instruction"=>"wefwefwefw", "commit"=>"Update recipe", "id"=>"13"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "recipes" SET "stars" = ?, "date" = ?, "instruction" = ?, "photo_url" = ? WHERE "recipes"."id" = ?  [["stars", 3], ["date", "2015-05-02 21:33:36"], ["instruction", "wefwefwefw"], ["photo_url", ""], ["id", 13]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:33:36 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/recipes/13" for ::1 at 2015-05-02 21:33:39 -0500
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FEuCLX5nXj5Xuw0pCZvH4PdGduSOyI1uz2OVno9okgOlbhKhZjJlRv2AMzazoojUQXQWX3xTBvEX3RO/CNF8UA==", "id"=>"13"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mSQL (1.2ms)[0m  [1mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 13]]
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:33:39 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:35:01 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/11/edit" for ::1 at 2015-05-02 21:35:03 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered recipes/edit.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `instructions' for #<Recipe:0x007f957a0a82e8>):
+    12:   </div>
+    13: 
+    14:   <div>
+    15:       <textarea cols="80" rows="5" value="<%= @recipe.instructions %>"  name="instruction"></textarea>
+    16:   </div>
+    17: 
+    18: 
+  app/views/recipes/edit.html.erb:15:in `block in _app_views_recipes_edit_html_erb__1404633460157166235_70139987170100'
+  app/views/recipes/edit.html.erb:2:in `_app_views_recipes_edit_html_erb__1404633460157166235_70139987170100'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (44.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (91.2ms)
+
+
+Started GET "/recipes/11/edit" for ::1 at 2015-05-02 21:35:03 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered recipes/edit.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `instructions' for #<Recipe:0x007f95722a4d10>):
+    12:   </div>
+    13: 
+    14:   <div>
+    15:       <textarea cols="80" rows="5" value="<%= @recipe.instructions %>"  name="instruction"></textarea>
+    16:   </div>
+    17: 
+    18: 
+  app/views/recipes/edit.html.erb:15:in `block in _app_views_recipes_edit_html_erb__1404633460157166235_70139921014980'
+  app/views/recipes/edit.html.erb:2:in `_app_views_recipes_edit_html_erb__1404633460157166235_70139921014980'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (38.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (84.3ms)
+
+
+Started GET "/recipes/11/edit" for ::1 at 2015-05-02 21:35:12 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered recipes/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/11/edit" for ::1 at 2015-05-02 21:35:35 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered recipes/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/11/edit" for ::1 at 2015-05-02 21:36:58 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered recipes/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/11/edit" for ::1 at 2015-05-02 21:37:56 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered recipes/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/recipes/11" for ::1 at 2015-05-02 21:38:03 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I/opcWl1blhVpBnI6qFjP4VfTNXk1NDVPoy2UySZU0KS37n9cSBVIP+fJ9dQmCwLM20sbhZPW0rmMjByoyC9EQ==", "title"=>"Pancake", "photo_url"=>"http://img5.imgtn.bdimg.com/it/u=1418365513,387621520&fm=21&gp=0.jpg", "instruction"=>"pancake_instruction222", "commit"=>"Update recipe", "id"=>"11"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "recipes" SET "stars" = ?, "date" = ?, "instruction" = ? WHERE "recipes"."id" = ?  [["stars", 3], ["date", "2015-05-02 21:38:03"], ["instruction", "pancake_instruction222"], ["id", 11]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:38:03 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/11" for ::1 at 2015-05-02 21:38:04 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered recipes/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/recipes/11" for ::1 at 2015-05-02 21:38:11 -0500
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/thUyKZv7csA++neWhUgPxvR3NhLeKpI6po7VpPGeolP/cREvjrWs6rA18HgLG8LreO8Y7njIdcyJL13FH+U2g==", "id"=>"11"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mSQL (1.4ms)[0m  DELETE FROM "recipes" WHERE "recipes"."id" = ?  [["id", 11]]
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 3ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:38:11 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:38:11 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/12/edit" for ::1 at 2015-05-02 21:38:13 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered recipes/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/12" for ::1 at 2015-05-02 21:38:16 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered recipes/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-02 21:38:17 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for ::1 at 2015-05-02 21:38:22 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Oo0Sjk0mLGGp7adJMNhgf1sbrvY77ykL/6ULwJQEQRKLqIICVXMXGQPWmVaK4S9L7SnOTcl0opQnG43hE72vQQ==", "title"=>"a", "phtot_url"=>"f", "instruction"=>"w", "commit"=>"Add recipe"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("title", "instruction") VALUES (?, ?)  [["title", "a"], ["instruction", "w"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 2ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:38:22 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/14" for ::1 at 2015-05-02 21:38:24 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 14]]
+  Rendered recipes/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:40:56 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.4ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 381ms (Views: 326.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:40:57 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/12" for ::1 at 2015-05-02 21:40:58 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered recipes/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 29.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/14" for ::1 at 2015-05-02 21:41:02 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 14]]
+  Rendered recipes/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/recipes/14" for ::1 at 2015-05-02 21:41:04 -0500
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3RX4X5xhfdNPkZvee/UhBm252sjt22nPuoKYy0RAY29sMGjThDRGq+WqpcHBzG4y24u6cx9A4lBiPB7qw/mNPA==", "id"=>"14"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "recipes" WHERE "recipes"."id" = ?  [["id", 14]]
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-02 21:41:04 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.2ms)

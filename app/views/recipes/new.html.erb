@@ -1,0 +1,24 @@
+<%= form_tag "/recipes" do %>
+
+  <div>
+    <%= label_tag :title %>
+    <%= text_field_tag :title, "", size: '40', placeholder: 'Example: Pancake' %>
+  </div>
+
+  <div>
+    <label for="phtot_url">phtot_url</label>
+    <input name="phtot_url" id="phtot_url" placeholder="Example: http://pic_url">
+  </div>
+
+  <div>
+    <textarea cols="80" rows="5" placeholder="Add instructions here...." name="instruction"></textarea>
+  </div>
+
+  <input type="submit" name="commit" value="Add recipe">
+
+<% end %>
+
+
+
+
+

@@ -1,0 +1,30 @@
+<p><%= link_to "Add a New recipe", "/recipes/new" %></p>
+
+<p><%= @recipes.count %> recipes.</p>
+
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Rating</th>
+    <th colspan=3>Instruction</th>
+  </tr>
+  <% @recipes.each do |recipe| %>
+    <tr>
+      <td><%= link_to recipe.title, recipe_url(recipe.id) %></td>
+      <td><%= recipe.date %></td>
+      <td>
+        <% recipe.stars.times do %>
+          &#9733;
+        <% end %>
+        <% (5 - recipe.stars).times do %>
+          &#9734;
+        <% end %>
+        </td>
+        <td><%= recipe.instruction %></td>
+      <td><%= link_to "Edit...", "/recipes/#{recipe.id}/edit" %></td>
+      <td><%= link_to "Delete", "/recipes/#{recipe.id}", :method => 'delete' %></td>
+    </tr>
+  <% end %>
+
+</table>

@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "categories", ["tag_id"], name: "index_categories_on_tag_id"
 
   create_table "recipes", force: :cascade do |t|
-    t.string  "title"
-    t.string  "photo_url"
-    t.string  "instruction"
-    t.string  "date"
-    t.integer "stars"
+    t.string   "title"
+    t.string   "photo_url"
+    t.string   "instruction"
+    t.datetime "date"
+    t.integer  "stars"
   end
 
   create_table "reviews", force: :cascade do |t|

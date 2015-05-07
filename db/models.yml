@@ -2,7 +2,7 @@ Recipe
   title: string
   photo_url: string
   instruction: string
-  date: string
+  date: datetime
   stars: integer
 
 Review

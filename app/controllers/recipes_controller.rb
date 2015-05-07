@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.order('title asc')
     @recipes.each do |rcp|
+        rcp.date = rcp.date.getlocal.strftime("%Y-%m-%d %H:%M:%S")
         rcp.stars = 3
 #TODO : generate stars from reviews
 =begin
@@ -35,7 +36,7 @@ class RecipesController < ApplicationController
     recipe = Recipe.new
     recipe.title = params[:title]
     recipe.instruction = params[:instruction]
-    recipe.date = params[:date]
+    recipe.date = Time.new()
     recipe.photo_url = params[:photo_url]
     recipe.save
     redirect_to recipes_url
@@ -46,7 +47,7 @@ class RecipesController < ApplicationController
 
   def update
     @recipe.title = params[:title]
-    @recipe.date = Time.new.strftime("%Y-%m-%d %H:%M:%S")
+    @recipe.date = Time.new()
     @recipe.instruction = params[:instruction]
     @recipe.photo_url = params[:photo_url]
     @recipe.save

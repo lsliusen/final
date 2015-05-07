@@ -11,8 +11,8 @@ Review.delete_all
 Tag.delete_all
 Category.delete_all
 
-[{:title => 'Pancake', :photo_url => 'http://img5.imgtn.bdimg.com/it/u=1418365513,387621520&fm=21&gp=0.jpg', :instruction => 'pancake_instruction', :date => '2015-05-01 00:00:00'},
-{:title =>'Omelette', :photo_url => 'http://wishfulchef.cdn.kinsta.com/wp-content/uploads/2011/09/SalmonPotatoOmelette.jpg', :instruction => 'omelette_instruction', :date => '2015-05-01 01:00:00'},
+[{:title => 'Pancake', :photo_url => 'http://img5.imgtn.bdimg.com/it/u=1418365513,387621520&fm=21&gp=0.jpg', :instruction => 'pancake_instruction', :date => Time.new},
+{:title =>'Omelette', :photo_url => 'http://wishfulchef.cdn.kinsta.com/wp-content/uploads/2011/09/SalmonPotatoOmelette.jpg', :instruction => 'omelette_instruction', :date => Time.new},
 ].each do |recipe|
     rcp = Recipe.new
     rcp.title = recipe[:title]

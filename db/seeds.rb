@@ -54,14 +54,14 @@ Add potatoes, chicken, coconut milk, and 1 1/2 cups water and bring to a boil. R
     rcp.user_id = recipe[:user_id]
 	rcp.save
 end
-[{:title=> "This is cool", :comment=>"The Food is really delicious.",:rating=> 4, :date=>Time.now, :recipe_id=>1, :user_id=>User.all.first.id},
-{:title=> "This is bad!", :comment=> "This isn't a good recipe.", :rating=> 1, :date=> Time.now, :recipe_id=>1, :user_id=>User.all.first.id},
-{:title=> "I love it!", :comment=> "OMG, that is purely delicious", :rating=> 5, :date=> Time.now, :recipe_id=>1, :user_id=>User.all.first.id}
+[{:title=> "This is cool", :comment=>"The Food is really delicious.",:stars=> 4, :date=>Time.now, :recipe_id=>Recipe.all.first.id, :user_id=>User.all.first.id},
+{:title=> "This is bad!", :comment=> "This isn't a good recipe.", :stars=> 1, :date=> Time.now, :recipe_id=>Recipe.all.first.id, :user_id=>User.all.first.id},
+{:title=> "I love it!", :comment=> "OMG, that is purely delicious", :stars=> 5, :date=> Time.now, :recipe_id=>Recipe.all.first.id, :user_id=>User.all.first.id}
 ].each do |review|
 	rv = Review.new
 	rv.title = review[:title]
 	rv.comment = review[:comment]
-	rv.rating = review[:rating]
+	rv.stars = review[:stars]
 	rv.date = review[:date]
 	rv.recipe_id = review[:recipe_id]
     rv.user_id = review[:user_id]

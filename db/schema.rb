@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "reviews", force: :cascade do |t|
     t.string   "title"
     t.text     "comment"
-    t.integer  "rating"
     t.datetime "date"
     t.integer  "recipe_id"
     t.integer  "user_id"
+    t.integer  "stars"
   end
 
   add_index "reviews", ["recipe_id"], name: "index_reviews_on_recipe_id"

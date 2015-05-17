@@ -12,7 +12,7 @@ Recipe
 Review
   title: string
   comment: text
-  rating: integer
+  stars: integer
   date: datetime
   recipe_id: integer
   user_id: integer

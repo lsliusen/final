@@ -1,16 +1,22 @@
 Recipe
   title: string
   photo_url: string
+  ingredients: string
   instruction: string
+  duration: string
   date: datetime
   stars: integer
+  num_reviews: integer
+  user_id: integer
 
 Review
   title: string
   comment: text
   rating: integer
-  date: string
+  date: datetime
   recipe_id: integer
+  user_id: integer
+
 
 Tag
   name: string
@@ -18,4 +24,13 @@ Tag
 Category
   recipe_id: integer
   tag_id: integer
+
+User
+  user_name: string
+  email: string
+  gender: string
+  create_date: datetime
+  photo_url: string
+  background: string
+  password: string
 

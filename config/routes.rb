@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   root 'recipes#index'
 
   ############################################################
@@ -29,6 +28,17 @@ Rails.application.routes.draw do
   patch '/reviews/:id' => 'reviews#update'
 
   delete '/reviews/:id' => 'reviews#destroy', as: 'delete_review'
+
+  ##################################################################
+
+  resources :tags
+
+  get "/signup" => 'users#new'
+  post "/users" => 'users#create'
+
+  get "/login" => 'sessions#new'
+  post "/sessions" => 'sessions#create'
+  get "/logout" => 'sessions#destroy'
 
 
 end

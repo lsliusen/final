@@ -1,24 +1,38 @@
+<% if @recipe.errors.any? %>
+  <ul>
+    <% @recipe.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %> 
+  </ul>
+<% end %>
+
 <%= form_tag "/recipes" do %>
 
   <div>
     <%= label_tag :title %>
-    <%= text_field_tag :title, "", size: '40', placeholder: 'Example: Pancake' %>
+    <%= text_field_tag :title, @recipe.title, size: '40', placeholder: 'Example: Pancake' %>
+  </div>
+  <div>
+    <%= label_tag :photo_url %>
+    <%= text_field_tag :photo_url, @recipe.photo_url, placeholder: 'Example: http://pic_url' %>
+  </div>
+  <div>
+    <%= label_tag :ingredients %><br>
+    <%= text_area_tag :ingredients, @recipe.ingredients, size: "60x10", placeholder: 'Add ingredients here...' %>
+  </div>
+  <div>
+    <%= label_tag :instruction %><br>
+    <%= text_area_tag :instruction, @recipe.instruction, size: "60x10", placeholder: 'Add instructions here...' %>
+  </div>
+  <div>
+    <%= label_tag :duration %>
+    <%= text_field_tag :duration, @recipe.duration, size: '40', placeholder: 'Example: 10 min' %>
   </div>
 
   <div>
-    <label for="photo_url">photo_url</label>
-    <input name="photo_url" id="photo_url" placeholder="Example: http://pic_url">
+      <%= submit_tag "Add Recipe" %>
   </div>
-
-  <div>
-    <textarea cols="80" rows="5" placeholder="Add instructions here...." name="instruction"></textarea>
-  </div>
-
-  <input type="submit" name="commit" value="Add recipe">
 
 <% end %>
-
-
-
 
 

@@ -1,5 +1,19 @@
 <h2><%= @recipe.title %></h2>
 
+<% if cookies["user_id"] == @recipe.user_id.to_s %>
+  <%= link_to "(Edit...)", "/recipes/#{@recipe.id}/edit" %>
+  <%= link_to "(Delete Recipe)", "/recipes/#{@recipe.id}", :method => 'delete' %>
+<% end %>
+
+<% if @review.errors.present? %>
+<ul>
+    <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <%end%>
+</ul>
+
+<% end %>
+
 <p>
   <span class="rating">Rated: <%= @recipe.stars %></span>
   "created at "

@@ -9,7 +9,6 @@ class RecipesController < ApplicationController
   end
 
   def index
-    cookies["user_id"] = User.all.first.id
     @recipes = Recipe.order('title asc')
     @recipes.each do |rcp|
         rcp.date = rcp.date.getlocal.strftime("%Y-%m-%d %H:%M:%S")
@@ -33,14 +32,23 @@ class RecipesController < ApplicationController
   end
 
   def new
+    if !cookies[:user_id].present?
+        redirect_to root_path, notice: "Please sign in to share your recipe."
+    end
+    @recipe = Recipe.new
   end
 
   def create
     recipe = Recipe.new
     recipe.title = params[:title]
-    recipe.instruction = params[:instruction]
-    recipe.date = Time.new()
     recipe.photo_url = params[:photo_url]
+    recipe.ingredients = params[:ingredients]
+    recipe.instruction = params[:instruction]
+    recipe.duration = params[:duration]
+    recipe.date = Time.new()
+    recipe.stars = params[:stars].to_i
+    recipe.num_reviews = 0
+    recipe.user_id = cookies[:user_id]
     recipe.save
     redirect_to recipes_url
   end

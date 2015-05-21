@@ -12,7 +12,16 @@
 
   <div class="container">
 
-    <h1><%= link_to "Recipes", "/" %>
+  <h1><%= link_to "Recipes", "/" %>
+
+  <% if cookies["user_id"].present? %>
+    <small>Hello, <%= User.find_by(id: cookies["user_id"]).user_name %></small>
+    <small><%= link_to "Sign Out", '/logout' %></small>
+  <% else %>
+    <small><%= link_to "Sign Up", '/signup' %></small>
+    <small><%= link_to "Sign In", '/login' %></small>
+  <% end %>
+
     <!-- TODO : add 'cook' details
     <small><%= link_to "Recipes", '/recipes' %></small>
     -->

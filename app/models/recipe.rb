@@ -12,4 +12,5 @@ class Recipe < ActiveRecord::Base
 	validates_presence_of :user_id
 	validates_presence_of :date
 	validates_presence_of :stars
+    validates_presence_of :num_reviews
 end

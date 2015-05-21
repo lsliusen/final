@@ -25,7 +25,8 @@ class ReviewsController < ApplicationController
     @review.save
     @reviews = Review.where(recipe_id: params[:recipe_id]).order('date desc')
     if @review.errors.present?
-      redirect_to recipe_url(:id => params[:recipe_id]), notice: @review.errors.messages
+      @recipe = Recipe.find_by(:id => params[:recipe_id])
+      render "/recipes/show", notice: @review.errors.messages
     else
       redirect_to recipe_url(:id => params[:recipe_id])
     end

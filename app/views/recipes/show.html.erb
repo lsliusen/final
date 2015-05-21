@@ -16,3 +16,49 @@
 <%= image_tag @recipe.photo_url %>
 
 <p><%= @recipe.instruction %></p>
+
+<% if @reviews.present? %>
+    <h3>comments</h3>
+    <% puts cookies["user_id"].present? and cookies["user_id"].to_i==@reviews[0].user_id %>
+    <% puts "123wefwjfwkjnefkjnwkj" %>
+<table>
+    <% @reviews.each do |review| %>
+        <tr>
+            <% (review.stars).times do %>
+                &#9734;
+            <%end%>
+            <%= review.title %>
+            (<%= review.date %>)
+            <% if cookies["user_id"].present? and cookies["user_id"].to_i==review.user_id %>
+                <%= link_to "(Delete)", delete_review_path(:id => review.id, :recipe_id => @recipe.id), :method => :delete  %>
+            <%end%>
+            <br>
+            <%= review.comment %>
+        </tr>
+        <br>
+        <br>
+    <%end%>
+</table>
+<% end %>
+
+<%= form_tag "/reviews" do%>
+    <%= hidden_field_tag :recipe_id, @recipe.id %>
+    <div>
+        <%= label_tag :title %>
+        <%= text_field_tag :title, "", size: '50', placeholder: 'Example: Delicious' %>
+    </div>
+    <div>
+        <%= label_tag :stars %>
+        <%= select_tag :stars, options_for_select(1..5, 1) %>
+    </div>
+    <div>
+        <%= label_tag :comment %>
+        <br>
+        <%= text_area_tag :comment, "", placeholder: "Put your comment here please.", rows: 5, cols: 80, escape: false%>
+    </div>
+    <div>
+        <%= submit_tag "Post review"%>
+    </div>
+<% end %>
+
+

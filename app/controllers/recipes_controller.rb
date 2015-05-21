@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
   end
 
   def index
+    cookies["user_id"] = User.all.first.id
     @recipes = Recipe.order('title asc')
     @recipes.each do |rcp|
         rcp.date = rcp.date.getlocal.strftime("%Y-%m-%d %H:%M:%S")
@@ -27,6 +28,11 @@ class RecipesController < ApplicationController
     if @recipe == nil
       redirect_to recipes_url, notice: "recipe not found."
     end
+    @reviews = Review.where(recipe_id: @recipe.id).order('date desc')
+    @reviews.each do |review|
+        puts review.stars
+    end
+    puts "asdfasdfsadf"
   end
 
   def new

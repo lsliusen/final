@@ -28,11 +28,8 @@ class RecipesController < ApplicationController
     if @recipe == nil
       redirect_to recipes_url, notice: "recipe not found."
     end
+    @review = Review.new
     @reviews = Review.where(recipe_id: @recipe.id).order('date desc')
-    @reviews.each do |review|
-        puts review.stars
-    end
-    puts "asdfasdfsadf"
   end
 
   def new

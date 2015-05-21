@@ -19,8 +19,6 @@
 
 <% if @reviews.present? %>
     <h3>comments</h3>
-    <% puts cookies["user_id"].present? and cookies["user_id"].to_i==@reviews[0].user_id %>
-    <% puts "123wefwjfwkjnefkjnwkj" %>
 <table>
     <% @reviews.each do |review| %>
         <tr>
@@ -45,7 +43,7 @@
     <%= hidden_field_tag :recipe_id, @recipe.id %>
     <div>
         <%= label_tag :title %>
-        <%= text_field_tag :title, "", size: '50', placeholder: 'Example: Delicious' %>
+        <%= text_field_tag :title, @review.title, size: '50', placeholder: 'Example: Delicious' %>
     </div>
     <div>
         <%= label_tag :stars %>
@@ -54,7 +52,8 @@
     <div>
         <%= label_tag :comment %>
         <br>
-        <%= text_area_tag :comment, "", placeholder: "Put your comment here please.", rows: 5, cols: 80, escape: false%>
+        <% puts @review.comment %>
+        <%= text_area_tag :comment, @review.comment, placeholder: "Put your comment here please.", rows: 5, cols: 80, escape: false%>
     </div>
     <div>
         <%= submit_tag "Post review"%>

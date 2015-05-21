@@ -4,16 +4,12 @@ class RecipesController < ApplicationController
 
   def find_recipe
     @recipe = Recipe.find_by(id: params["id"])
-    #TODO : generate stars from reviews
-    @recipe.stars = 3
   end
 
   def index
     @recipes = Recipe.order('title asc')
     @recipes.each do |rcp|
         rcp.date = rcp.date.getlocal.strftime("%Y-%m-%d %H:%M:%S")
-        rcp.stars = 3
-#TODO : generate stars from reviews
 =begin
         review = Review.find_by_recipe_id(rcp.id)
         if review == nil
@@ -32,7 +28,7 @@ class RecipesController < ApplicationController
   end
 
   def new
-    if !cookies[:user_id].present?
+    if !session[:user_id].present?
         redirect_to root_path, notice: "Please sign in to share your recipe."
     end
     @recipe = Recipe.new
@@ -48,7 +44,7 @@ class RecipesController < ApplicationController
     recipe.date = Time.new()
     recipe.stars = params[:stars].to_i
     recipe.num_reviews = 0
-    recipe.user_id = cookies[:user_id]
+    recipe.user_id = session[:user_id]
     recipe.save
     redirect_to recipes_url
   end

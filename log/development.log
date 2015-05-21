@@ -8182,3 +8182,1092 @@ Processing by RecipesController#show as HTML
   Rendered recipes/show.html.erb within layouts/application (1.4ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 26ms (Views: 18.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 17:38:04 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 20.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 17:59:03 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.4ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 283ms (Views: 216.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 17:59:05 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 17:59:30 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-21 17:59:51 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 29.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 17:59:54 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:00:26 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 236ms (Views: 181.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-21 18:00:28 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 27ms (Views: 20.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:09:35 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.9ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 241ms (Views: 188.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-21 18:09:37 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 26ms (Views: 19.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:09:38 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:09:44 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zd9Kup4puVTLIxTHFlqrnutb9ZR2EjfY+jwuthMcT4/ZDhG8woy3PwdzTBGIEnRqbwUNcBJYzi+wiYSKck8Sbw==", "user_name"=>"ls", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "ls"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:09:44 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2015-05-21 18:09:48 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:09:48 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-21 18:09:50 -0500
+Processing by RecipesController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:09:50 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:09:52 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:09:54 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x8xRGU684BnPplxESItplihQIgLjBigH6XqPVnwmcJx7HQofEhnucgP2BJLWw7ZirA7a5odM0fCjzyVqHXUtfA==", "user_name"=>"ls", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "ls"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:09:54 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-21 18:09:55 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:09:56 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2015-05-21 18:09:57 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:09:57 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:09:58 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:10:01 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQ4ps0+GcaB46N9ki9SpVjwKDl7BNru7r6hAVhoSxmPd33K1EyN/y7S4h7IVnHaiuFT2uqV8QkzlHepqe0Gbgw==", "user_name"=>"fe", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "fe"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:10:01 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:11:02 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JuI24IAGjpFWiwjnYhC2Drq2Bh0IQH0eRv48q4VKNo+aM23m3KOA+prbUDH8WGn6Puj++WwKhOkMS5aX5Blrbw==", "user_name"=>"ls", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "ls"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:11:02 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 20.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/recipes/48" for ::1 at 2015-05-21 18:11:05 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 48]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 48]]
+  Rendered recipes/show.html.erb within layouts/application (2.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 28.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/reviews" for ::1 at 2015-05-21 18:11:08 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/9eZA5E/xtg5T6sqC4YIt4kFFhYFmNG3Lsj/7Kc0dwBDBsIFzZrIs/Uf8/yVztdDDVvu8mHSKEBkfVXQxmcq4A==", "recipe_id"=>"48", "title"=>"a", "stars"=>"1", "comment"=>"b", "commit"=>"Post review"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "reviews" ("title", "comment", "date", "stars", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["title", "a"], ["comment", "b"], ["date", "2015-05-21 23:11:08.692303"], ["stars", 1], ["recipe_id", 48], ["user_id", 11]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/48
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/recipes/48" for ::1 at 2015-05-21 18:11:08 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 48]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 48]]
+  Rendered recipes/show.html.erb within layouts/application (2.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/reviews/46?recipe_id=48" for ::1 at 2015-05-21 18:11:10 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iFbhivGhxMZFhATgAicldtu07IofJfhuhHuz56pFHQ80h7qMrQTKrYnUXDacb/qCX+oUbntvAZnOzhnbyxZA7w==", "recipe_id"=>"48", "id"=>"46"}
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT 1[0m  [["id", 46]]
+  [1m[35mSQL (1.7ms)[0m  DELETE FROM "reviews" WHERE "reviews"."id" = ?  [["id", 46]]
+Redirected to http://localhost:3000/recipes/48
+Completed 302 Found in 4ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/recipes/48" for ::1 at 2015-05-21 18:11:10 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 48]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 48]]
+  Rendered recipes/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/48" for ::1 at 2015-05-21 18:11:12 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 48]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 48]]
+  Rendered recipes/show.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/48" for ::1 at 2015-05-21 18:11:13 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 48]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 48]]
+  Rendered recipes/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:22:13 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 24.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/reviews" for ::1 at 2015-05-21 18:22:21 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QTBbx0MvyloLFSFABdfDRNpccoGWQmObUEmv+C6W09T94QDBH4rEMcdFeZabnxywXgKKZfIImmwa/AXET8WONA==", "recipe_id"=>"47", "title"=>"ac", "stars"=>"3", "comment"=>"b", "commit"=>"Post review"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("title", "comment", "date", "stars", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["title", "ac"], ["comment", "b"], ["date", "2015-05-21 23:22:21.129706"], ["stars", 3], ["recipe_id", 47], ["user_id", 11]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("reviews"."stars") FROM "reviews" WHERE "reviews"."recipe_id" = ?  [["recipe_id", 47]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "recipes" SET "num_reviews" = ?, "stars" = ? WHERE "recipes"."id" = ?[0m  [["num_reviews", 1], ["stars", 17], ["id", 47]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 12ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:22:21 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.3ms)
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"
+
+
+Started POST "/reviews" for ::1 at 2015-05-21 18:24:22 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gTZRpjbU83v5lEolEBG2vyIxF2jhPZ5Ifjefk2FcgIM95wqganH9EDXEEvOOWWlLpm/vjIV3Z780gjWvAA/dYw==", "recipe_id"=>"47", "title"=>"sfe", "stars"=>"3", "comment"=>"a", "commit"=>"Post review"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reviews" ("title", "comment", "date", "stars", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "sfe"], ["comment", "a"], ["date", "2015-05-21 23:24:22.068760"], ["stars", 3], ["recipe_id", 47], ["user_id", 11]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("reviews"."stars") FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 47]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("reviews"."stars") FROM "reviews" WHERE "reviews"."recipe_id" = ?  [["recipe_id", 47]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "recipes" SET "num_reviews" = ?, "stars" = ? WHERE "recipes"."id" = ?[0m  [["num_reviews", 2], ["stars", 10], ["id", 47]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 25ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:24:22 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.6ms)
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "recipes" SET "stars" = ? WHERE "recipes"."id" = ?  [["stars", 0], ["id", 47]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+
+
+Started DELETE "/reviews/48?recipe_id=47" for ::1 at 2015-05-21 18:25:08 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aodZSQqXm4zMpsppptGvsgmo2NJsNbPrf0I/I/CwgijWVgJPVjKV5wD2kr84mXBGjfYgNgh/Shw195UfkePfyA==", "recipe_id"=>"47", "id"=>"48"}
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT 1  [["id", 48]]
+  [1m[36mSQL (1.6ms)[0m  [1mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 48]]
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 3ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:25:08 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (2.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/reviews/47?recipe_id=47" for ::1 at 2015-05-21 18:25:11 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"i2O2TsDKw27HG+CEL/Q2yBKuGP0gG/z9y7mFw3Nb7Do3su1InG/NBQtLuFKxvOk8lvDgGURRBQqBDC//Egix2g==", "recipe_id"=>"47", "id"=>"47"}
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mSQL (1.4ms)[0m  DELETE FROM "reviews" WHERE "reviews"."id" = ?  [["id", 47]]
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 3ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:25:11 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for ::1 at 2015-05-21 18:25:13 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:25:13 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:25:16 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:25:21 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YUaJDXB3ju2QOLo/VFIHycDdeTpXOXqf1oPBVSPb7nvdl9ILLNKAhlxo4unKGtg9RIOB3jNzg2icNmtpQoizmw==", "user_name"=>"firstuser", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "firstuser"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:25:21 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:25:59 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M412cUoF87DlhGc9EjE8YyzT3By/JsqcEG2T6nFfp4SPXC13FqD92ynUP+uMeeOXqI0k+NtsM2ta2DnWEAz6ZA==", "user_name"=>"First User", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "First User"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:25:59 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:26:01 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/reviews/43?recipe_id=47" for ::1 at 2015-05-21 18:26:02 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jMHvrg96dKieWbVY2pEjK79rzecckKp5BjgzZ8GImekwELSoU996w1IJ7Y5E2fzfOzU1A3jaU45MjZlboNvECQ==", "recipe_id"=>"47", "id"=>"43"}
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT 1  [["id", 43]]
+  [1m[36mSQL (1.8ms)[0m  [1mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 43]]
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:26:02 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/reviews/30?recipe_id=47" for ::1 at 2015-05-21 18:26:04 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zGYiLiGM/+047aCvHfnnXtrmrf0f6uMScGlIN7yRt5Rwt3kofSnxhvS9+HmDsTiqXrhVGXugGuU63OIL3cLqdA==", "recipe_id"=>"47", "id"=>"30"}
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mSQL (1.8ms)[0m  DELETE FROM "reviews" WHERE "reviews"."id" = ?  [["id", 30]]
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:26:04 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/reviews/29?recipe_id=47" for ::1 at 2015-05-21 18:26:06 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"m9eCc2Pexmn2sZvf2af2au+9wK/QJQB1E69yGTbqU7onBtl1P3vIAjrhwwlH7ymea+M4S7Rv+YJZGtglV7kOWg==", "recipe_id"=>"47", "id"=>"29"}
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT 1  [["id", 29]]
+  [1m[36mSQL (1.6ms)[0m  [1mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 29]]
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 3ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:26:06 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.3ms)
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:26:24 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:26:26 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/48" for ::1 at 2015-05-21 18:26:28 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 48]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 48]]
+  Rendered recipes/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/reviews/42?recipe_id=48" for ::1 at 2015-05-21 18:26:30 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SMoc/KfcgARaLpbDdjPrpKyTUHxDZRziQ3vmt4GKBa/0G0f6+3mOb5Z+zhXoezRQKM2omCcv5RUJzkyL4NlYTw==", "recipe_id"=>"48", "id"=>"42"}
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT 1  [["id", 42]]
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 42]]
+Redirected to http://localhost:3000/recipes/48
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/recipes/48" for ::1 at 2015-05-21 18:26:30 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 48]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 48]]
+  Rendered recipes/show.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:26:31 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:26:32 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for ::1 at 2015-05-21 18:26:36 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:26:36 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:26:37 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:26:49 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TyV6p1fsB6Pn49IcXK/pI5AwYMsuBYEXStQpQ1Bxm77z9CGhC0kJyCuzisrC5zbXFG6YL0pPeOAAYYN/MSLGXg==", "user_name"=>"Second User", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "Second User"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:26:49 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:27:00 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ErOvKAPQldsMheg1oOlTgUNfX5Sq1HdyYbU5xbBcD92uYvQuX3WbsMDVsOM+oYx1xwGncM6ejoUrAJP50Q9SPQ==", "user_name"=>"Second User", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "Second User"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:27:00 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:27:02 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/reviews/31?recipe_id=47" for ::1 at 2015-05-21 18:27:03 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8Gk4O4oxRRTsBJBQPsvosmc+Sp1cf2IzwENpn6llWGRMuGM91pRLfyBUyIaggzdG42CyeTg1m8SK9sOjyDYFhA==", "recipe_id"=>"47", "id"=>"31"}
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT 1[0m  [["id", 31]]
+  [1m[35mSQL (1.6ms)[0m  DELETE FROM "reviews" WHERE "reviews"."id" = ?  [["id", 31]]
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 3ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:27:03 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "recipes" SET "num_reviews" = ? WHERE "recipes"."id" = ?  [["num_reviews", 0], ["id", 47]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2015-05-21 18:27:39 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:27:41 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:27:42 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:28:39 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 29.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/reviews" for ::1 at 2015-05-21 18:28:55 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jNNqc47mX47rUexoGhkBtt0H/E3gZG1X5yVs70PrjZkwAjF10kNR5ScBtL6EUd5CWVkEqYQulKCtkMbTIrjQeQ==", "recipe_id"=>"47", "title"=>"ab", "stars"=>"1", "comment"=>"d", "commit"=>"Post review"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("title", "comment", "date", "stars", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "ab"], ["comment", "d"], ["date", "2015-05-21 23:28:55.902520"], ["stars", 1], ["recipe_id", 47], ["user_id", 10]]
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("reviews"."stars") FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 47]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("reviews"."stars") FROM "reviews" WHERE "reviews"."recipe_id" = ?  [["recipe_id", 47]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "recipes" SET "num_reviews" = ?, "stars" = ? WHERE "recipes"."id" = ?[0m  [["num_reviews", 1], ["stars", 2], ["id", 47]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:28:55 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:30:24 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:30:39 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:32:31 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 37.7ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "recipes" SET "stars" = ?, "num_reviews" = ? WHERE "recipes"."id" = ?[0m  [["stars", 1], ["num_reviews", 1], ["id", 47]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:33:14 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/reviews" for ::1 at 2015-05-21 18:33:19 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m5d0ZAty6jCAqzozEYTST51In/LpKMnX/4mjkKyi/OQnRi9iV9fkW0z7YuWPzA27GRZnFo1iMCC1PAmszfGhBA==", "recipe_id"=>"47", "title"=>"wefew", "stars"=>"1", "comment"=>"sdf", "commit"=>"Post review"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reviews" ("title", "comment", "date", "stars", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "wefew"], ["comment", "sdf"], ["date", "2015-05-21 23:33:19.241373"], ["stars", 1], ["recipe_id", 47], ["user_id", 10]]
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("reviews"."stars") FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 47]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "recipes" SET "num_reviews" = ? WHERE "recipes"."id" = ?  [["num_reviews", 2], ["id", 47]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:33:19 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/reviews" for ::1 at 2015-05-21 18:33:28 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YZkTspBsHuYAtd2au3jrBx5k5a9OW4Wgie08hVijGtDdSEi0zMkQjczlhUwlMDTzmjodSyoRfFfDWJa5OfBHMA==", "recipe_id"=>"47", "title"=>"waef", "stars"=>"4", "comment"=>"fwef", "commit"=>"Post review"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("title", "comment", "date", "stars", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["title", "waef"], ["comment", "fwef"], ["date", "2015-05-21 23:33:28.650864"], ["stars", 4], ["recipe_id", 47], ["user_id", 10]]
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35m (0.0ms)[0m  SELECT SUM("reviews"."stars") FROM "reviews" WHERE "reviews"."recipe_id" = ?  [["recipe_id", 47]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "recipes" SET "num_reviews" = ?, "stars" = ? WHERE "recipes"."id" = ?[0m  [["num_reviews", 3], ["stars", 2], ["id", 47]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:33:28 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/reviews/51?recipe_id=47" for ::1 at 2015-05-21 18:35:24 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kPnZ9oZDSZFEp/xd+lFezgjE+0sPnv1kKcYsWorPBUYsKILw2uZH+oj3pItkGYE6jJoDr2vUBJNjc4Zm65xYpg==", "recipe_id"=>"47", "id"=>"51"}
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT 1  [["id", 51]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "reviews" WHERE "reviews"."id" = ?  [["id", 51]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("reviews"."stars") FROM "reviews" WHERE "reviews"."recipe_id" = ?  [["recipe_id", 47]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "recipes" SET "num_reviews" = ?, "stars" = ? WHERE "recipes"."id" = ?[0m  [["num_reviews", 2], ["stars", 1], ["id", 47]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 21ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:35:24 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 47]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/reviews" for ::1 at 2015-05-21 18:35:36 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L+LbLLMpAJKsoWbR28sdHT73NPTo0FZ3PWRmrJiHqGWTM4Aq74wO+WDxPgdFg8LpuqnMEIyar4B30cyQ+dT1hQ==", "recipe_id"=>"47", "title"=>"Aamir Kha", "stars"=>"4", "comment"=>"a", "commit"=>"Post review"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reviews" ("title", "comment", "date", "stars", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Aamir Kha"], ["comment", "a"], ["date", "2015-05-21 23:35:36.574577"], ["stars", 4], ["recipe_id", 47], ["user_id", 10]]
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36m (0.0ms)[0m  [1mSELECT SUM("reviews"."stars") FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 47]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "recipes" SET "num_reviews" = ?, "stars" = ? WHERE "recipes"."id" = ?  [["num_reviews", 3], ["stars", 2], ["id", 47]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:35:36 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/reviews/50?recipe_id=47" for ::1 at 2015-05-21 18:35:39 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZAKsqMBbnd64MQp7L9mVRayHlrk5j9zgxvtanDTk+nLY0/eunP6TtXRhUq2xkUqxKNluXV3FJReMTvCgVbenkg==", "recipe_id"=>"47", "id"=>"50"}
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT 1[0m  [["id", 50]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 50]]
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36m (0.0ms)[0m  [1mSELECT SUM("reviews"."stars") FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 47]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "recipes" SET "num_reviews" = ? WHERE "recipes"."id" = ?  [["num_reviews", 2], ["id", 47]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:35:39 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/reviews/49?recipe_id=47" for ::1 at 2015-05-21 18:35:41 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9loULl8Z0VkZmVlDkI4WVNRGGMHy7WaxzMMc+UG+WdhKi08oA7zfMtXJAZUOxsmgUBjgJZann0aGdrbFIO0EOA==", "recipe_id"=>"47", "id"=>"49"}
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT 1[0m  [["id", 49]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 49]]
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36m (0.0ms)[0m  [1mSELECT SUM("reviews"."stars") FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 47]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "recipes" SET "num_reviews" = ?, "stars" = ? WHERE "recipes"."id" = ?  [["num_reviews", 1], ["stars", 4], ["id", 47]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/47
+Completed 302 Found in 6ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/recipes/47" for ::1 at 2015-05-21 18:35:41 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 47]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 47]]
+  Rendered recipes/show.html.erb within layouts/application (2.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2015-05-21 18:35:50 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:35:50 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:35:51 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "recipes"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "reviews"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "tags"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "categories"[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'First User' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'fistuser@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("user_name", "email", "gender", "photo_url", "background", "password", "create_date") VALUES (?, ?, ?, ?, ?, ?, ?)  [["user_name", "First User"], ["email", "fistuser@example.com"], ["gender", "male"], ["photo_url", "http://d.lanrentuku.com/down/png/0904/yellow_people_face/yellow_people_face_02.png"], ["background", "Love cooking!"], ["password", "pwd4firstuser"], ["create_date", "2015-05-21 23:37:37.844977"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'Second User' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'seconduser@example.com' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "email", "gender", "photo_url", "background", "password", "create_date") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "Second User"], ["email", "seconduser@example.com"], ["gender", "male"], ["photo_url", "http://d.lanrentuku.com/down/png/0904/yellow_people_face/yellow_people_face_02.png"], ["background", "Love cooking too!"], ["password", "pwd4firstuser"], ["create_date", "2015-05-21 23:37:37.844984"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("title", "photo_url", "instruction", "date", "ingredients", "duration", "stars", "num_reviews", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Pancake"], ["photo_url", "http://graphics8.nytimes.com/images/2014/04/14/dining/everydaypancakes/everydaypancakes-articleLarge.jpg"], ["instruction", "The basic pancake is made from a simple batter of eggs, flour, milk and baking powder for leavening. You can use different types of flour if you want to experiment with whole wheat or buckwheat. And you can also add fruit to the mixture. The batter can be made from scratch in about the same time it takes to make toast. The most time-consuming part of making pancakes, of course, is cooking them. But that time is so short you should consider these an everyday convenience food, not a special-occasion feast. Cook this recipe a few times and it may become part of your weekly routine. (Sam Sifton)"], ["date", "2015-05-21 23:37:37.873450"], ["ingredients", "1/2 cups all-purpose flour, 1/4 cups milk, 3/2 teaspoons baking powder, 1 egg, 1 teaspoon salt, 3 tablespoons butter, melted, 1 tablespoon white sugar"], ["duration", "20 mins"], ["stars", 3], ["num_reviews", 3], ["user_id", 12]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("title", "photo_url", "instruction", "date", "ingredients", "duration", "stars", "num_reviews", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Omelette"], ["photo_url", "http://wishfulchef.cdn.kinsta.com/wp-content/uploads/2011/09/SalmonPotatoOmelette.jpg"], ["instruction", "First, prepare the filling. A basic rule of thumb is that you need one quarter to one third cup of filling for every two eggs. If you are using a filling that needs to be cooked — such as apples, mushrooms, onions, peppers, leeks — quickly sauté in a small frying pan with 1 teaspoon of the butter. If you are making a cheese omelette, either slice the cheese thinly or grate it finely and put aside.\n\nCrack the eggs into a small mixing bowl. Stir gently with a fork until well-beaten. Add the milk or water, salt and pepper, and any herbs, and set aside.\n\nHeat a 6- to 8-inch omelette pan over high heat until very hot (approximately 30 seconds). Add the butter, making sure it coats the bottom of the pan. As soon as the butter stops bubbling and sizzling (and before it starts to brown), slowly pour in the egg mixture.\n\nTilt the pan to spread the egg mixture evenly. Let eggs firm up a little, and after about ten seconds shake the pan a bit and use a spatula to gently direct the mixture away from the sides and into the middle. Allow the remaining liquid to then flow into the space left at the sides of the pan.\n\nContinue to cook for another minute or so until the egg mixture holds together. While the middle is still a little runny, add the filling. Put in sautéed vegetables or fruit first, near the center, then sprinkle any cheese on top.\n\nTilt the pan to one side and use the spatula to fold approximately one third of the omelette over the middle. Shake the pan gently to slide the omelette to the edge of the pan.\n\nHolding the pan above the serving plate, tip it so the omelette rolls off, folding itself onto the plate. The two edges will be tucked underneath."], ["date", "2015-05-21 23:37:37.873963"], ["ingredients", "Ingredients for Omelette"], ["duration", "20 mins"], ["stars", 0], ["num_reviews", 0], ["user_id", 12]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("title", "photo_url", "instruction", "date", "ingredients", "duration", "stars", "num_reviews", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "THAI CHICKEN CURRY"], ["photo_url", "http://www.epicurious.com/images/recipesmenus/2013/2013_january/51140410.jpg"], ["instruction", "Heat oil in a large heavy pot over medium heat. Add curry paste and cook, stirring, until fragrant, about 1 minute. Add carrots, onion, and pepper and cook, stirring occasionally, until onion is translucent, about 10 minutes.\n\nAdd potatoes, chicken, coconut milk, and 1 1/2 cups water and bring to a boil. Reduce heat to a simmer and cook, stirring occasionally, until chicken is cooked through and potatoes are tender, about 20 minutes. Divide curry among bowls and top with herbs."], ["date", "2015-05-21 23:37:37.874244"], ["ingredients", "Ingredients for Thai chicken curry"], ["duration", "20 mins"], ["stars", 0], ["num_reviews", 0], ["user_id", 12]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("title", "comment", "stars", "date", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["title", "This is cool"], ["comment", "The Food is really delicious."], ["stars", 4], ["date", "2015-05-21 23:37:37.885572"], ["recipe_id", 51], ["user_id", 12]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("title", "comment", "stars", "date", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "This is bad!"], ["comment", "This isn't a good recipe."], ["stars", 1], ["date", "2015-05-21 23:37:37.886527"], ["recipe_id", 51], ["user_id", 12]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("title", "comment", "stars", "date", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["title", "I love it!"], ["comment", "OMG, that is purely delicious"], ["stars", 5], ["date", "2015-05-21 23:37:37.887153"], ["recipe_id", 51], ["user_id", 12]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mTag Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = 'breakfast' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "breakfast"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mTag Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = 'egg' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "egg"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mTag Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = 'sweet' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "sweet"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1[0m
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("recipe_id", "tag_id") VALUES (?, ?)[0m  [["recipe_id", 51], ["tag_id", 58]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("recipe_id", "tag_id") VALUES (?, ?)  [["recipe_id", 51], ["tag_id", 59]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories" ("recipe_id", "tag_id") VALUES (?, ?)[0m  [["recipe_id", 51], ["tag_id", 60]]
+  [1m[35m (0.8ms)[0m  commit transaction
+
+
+Started GET "/" for ::1 at 2015-05-21 18:37:40 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/51" for ::1 at 2015-05-21 18:37:41 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 51]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 51]]
+  Rendered recipes/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/51" for ::1 at 2015-05-21 18:39:06 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 51]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 51]]
+  Rendered recipes/show.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.2ms)

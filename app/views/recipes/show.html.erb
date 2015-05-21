@@ -1,6 +1,6 @@
 <h2><%= @recipe.title %></h2>
 
-<% if cookies["user_id"] == @recipe.user_id.to_s %>
+<% if session["user_id"] == @recipe.user_id.to_s %>
   <%= link_to "(Edit...)", "/recipes/#{@recipe.id}/edit" %>
   <%= link_to "(Delete Recipe)", "/recipes/#{@recipe.id}", :method => 'delete' %>
 <% end %>
@@ -18,12 +18,14 @@
   <span class="rating">Rated: <%= @recipe.stars %></span>
   "created at "
   <%= @recipe.date %>
+  <% puts @recipe.stars %>
   <% @recipe.stars.times do %>
     &#9733;
   <% end %>
   <% (5 - @recipe.stars).times do %>
     &#9734;
-  <% end %>
+<% end %>
+<%= "(#{@recipe.num_reviews} reviews)" %>
 
 </p>
 
@@ -41,7 +43,7 @@
             <%end%>
             <%= review.title %>
             (<%= review.date %>)
-            <% if cookies["user_id"].present? and cookies["user_id"].to_i==review.user_id %>
+            <% if session["user_id"].present? and session["user_id"].to_i==review.user_id %>
                 <%= link_to "(Delete)", delete_review_path(:id => review.id, :recipe_id => @recipe.id), :method => :delete  %>
             <%end%>
             <br>

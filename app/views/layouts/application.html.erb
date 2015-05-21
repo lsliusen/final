@@ -14,8 +14,8 @@
 
   <h1><%= link_to "Recipes", "/" %>
 
-  <% if cookies["user_id"].present? %>
-    <small>Hello, <%= User.find_by(id: cookies["user_id"]).user_name %></small>
+  <% if session["user_id"].present? %>
+    <small>Hello, <%= User.find_by(id: session["user_id"]).user_name %></small>
     <small><%= link_to "Sign Out", '/logout' %></small>
   <% else %>
     <small><%= link_to "Sign Up", '/signup' %></small>

@@ -22,6 +22,7 @@ class RecipesController < ApplicationController
   def show
     if @recipe == nil
       redirect_to recipes_url, notice: "recipe not found."
+      return
     end
     @review = Review.new
     @reviews = Review.where(recipe_id: @recipe.id).order('date desc')
@@ -30,6 +31,7 @@ class RecipesController < ApplicationController
   def new
     if !session[:user_id].present?
         redirect_to root_path, notice: "Please sign in to share your recipe."
+        return
     end
     @recipe = Recipe.new
   end
@@ -62,7 +64,13 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe.delete
+    @recipe.transaction do
+      reviews = Review.where(:recipe_id => @recipe.id)
+      reviews.each do |review|
+        review.delete
+      end
+      @recipe.delete
+    end
     redirect_to recipes_url
   end
 

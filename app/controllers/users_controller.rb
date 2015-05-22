@@ -1,5 +1,18 @@
 class UsersController < ApplicationController
 
+  before_filter :authorize, only: [:show]
+
+  def authorize
+    @user = User.find_by(id: params[:id])
+    if @user.id.blank? || session[:user_id].blank? || session[:user_id] != @user.id
+      redirect_to root_url, notice: "Nice try."
+      return
+    end
+  end
+
+  def show
+  end
+
   def new
     @user = User.new
   end

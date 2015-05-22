@@ -9271,3 +9271,904 @@ Processing by RecipesController#show as HTML
   Rendered recipes/show.html.erb within layouts/application (2.8ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (1.9ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "email" varchar, "gender" varchar, "create_date" datetime, "photo_url" varchar, "background" varchar, "password" varchar, "password_digest" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "users"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ausers" ("id","user_name","email","gender","create_date","photo_url","background","password","password_digest") VALUES (12, 'First User', 'fistuser@example.com', 'male', '2015-05-21 23:37:37.844977', 'http://d.lanrentuku.com/down/png/0904/yellow_people_face/yellow_people_face_02.png', 'Love cooking!', 'pwd4firstuser', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ausers" ("id","user_name","email","gender","create_date","photo_url","background","password","password_digest") VALUES (13, 'Second User', 'seconduser@example.com', 'male', '2015-05-21 23:37:37.844984', 'http://d.lanrentuku.com/down/png/0904/yellow_people_face/yellow_people_face_02.png', 'Love cooking too!', 'pwd4firstuser', NULL)
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar, "email" varchar, "gender" varchar, "create_date" datetime, "photo_url" varchar, "background" varchar, "password_digest" varchar) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","user_name","email","gender","create_date","photo_url","background","password_digest") VALUES (12, 'First User', 'fistuser@example.com', 'male', '2015-05-21 23:37:37.844977', 'http://d.lanrentuku.com/down/png/0904/yellow_people_face/yellow_people_face_02.png', 'Love cooking!', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "users" ("id","user_name","email","gender","create_date","photo_url","background","password_digest") VALUES (13, 'Second User', 'seconduser@example.com', 'male', '2015-05-21 23:37:37.844984', 'http://d.lanrentuku.com/down/png/0904/yellow_people_face/yellow_people_face_02.png', 'Love cooking too!', NULL)[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "ausers"
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (2.0ms)[0m  DELETE FROM "recipes"
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "reviews"[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "tags"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "categories"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_tag_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_categories_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_recipe_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (2.0ms)[0m  DELETE FROM "recipes"
+  [1m[36mSQL (1.2ms)[0m  [1mDELETE FROM "reviews"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "tags"
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "categories"[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'First User' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'fistuser@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user_name", "email", "gender", "photo_url", "background", "password_digest", "create_date") VALUES (?, ?, ?, ?, ?, ?, ?)  [["user_name", "First User"], ["email", "fistuser@example.com"], ["gender", "male"], ["photo_url", "http://d.lanrentuku.com/down/png/0904/yellow_people_face/yellow_people_face_02.png"], ["background", "Love cooking!"], ["password_digest", "$2a$10$MMFf/5LO48Zj1uAnOWat.Ocp2ZbEKeFLQwCR/g4PiGKHyCs.kyjy."], ["create_date", "2015-05-21 23:47:51.002049"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'Second User' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'seconduser@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("user_name", "email", "gender", "photo_url", "background", "password_digest", "create_date") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "Second User"], ["email", "seconduser@example.com"], ["gender", "male"], ["photo_url", "http://d.lanrentuku.com/down/png/0904/yellow_people_face/yellow_people_face_02.png"], ["background", "Love cooking too!"], ["password_digest", "$2a$10$tbZ1nyBqg/0b8oebCZWEOuSoANYHEFDj/B6RWOvJDrUjcPk6ZFRy2"], ["create_date", "2015-05-21 23:47:51.002053"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("title", "photo_url", "instruction", "date", "ingredients", "duration", "stars", "num_reviews", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Pancake"], ["photo_url", "http://graphics8.nytimes.com/images/2014/04/14/dining/everydaypancakes/everydaypancakes-articleLarge.jpg"], ["instruction", "The basic pancake is made from a simple batter of eggs, flour, milk and baking powder for leavening. You can use different types of flour if you want to experiment with whole wheat or buckwheat. And you can also add fruit to the mixture. The batter can be made from scratch in about the same time it takes to make toast. The most time-consuming part of making pancakes, of course, is cooking them. But that time is so short you should consider these an everyday convenience food, not a special-occasion feast. Cook this recipe a few times and it may become part of your weekly routine. (Sam Sifton)"], ["date", "2015-05-21 23:47:51.154493"], ["ingredients", "1/2 cups all-purpose flour, 1/4 cups milk, 3/2 teaspoons baking powder, 1 egg, 1 teaspoon salt, 3 tablespoons butter, melted, 1 tablespoon white sugar"], ["duration", "20 mins"], ["stars", 3], ["num_reviews", 3], ["user_id", 14]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("title", "photo_url", "instruction", "date", "ingredients", "duration", "stars", "num_reviews", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Omelette"], ["photo_url", "http://wishfulchef.cdn.kinsta.com/wp-content/uploads/2011/09/SalmonPotatoOmelette.jpg"], ["instruction", "First, prepare the filling. A basic rule of thumb is that you need one quarter to one third cup of filling for every two eggs. If you are using a filling that needs to be cooked — such as apples, mushrooms, onions, peppers, leeks — quickly sauté in a small frying pan with 1 teaspoon of the butter. If you are making a cheese omelette, either slice the cheese thinly or grate it finely and put aside.\n\nCrack the eggs into a small mixing bowl. Stir gently with a fork until well-beaten. Add the milk or water, salt and pepper, and any herbs, and set aside.\n\nHeat a 6- to 8-inch omelette pan over high heat until very hot (approximately 30 seconds). Add the butter, making sure it coats the bottom of the pan. As soon as the butter stops bubbling and sizzling (and before it starts to brown), slowly pour in the egg mixture.\n\nTilt the pan to spread the egg mixture evenly. Let eggs firm up a little, and after about ten seconds shake the pan a bit and use a spatula to gently direct the mixture away from the sides and into the middle. Allow the remaining liquid to then flow into the space left at the sides of the pan.\n\nContinue to cook for another minute or so until the egg mixture holds together. While the middle is still a little runny, add the filling. Put in sautéed vegetables or fruit first, near the center, then sprinkle any cheese on top.\n\nTilt the pan to one side and use the spatula to fold approximately one third of the omelette over the middle. Shake the pan gently to slide the omelette to the edge of the pan.\n\nHolding the pan above the serving plate, tip it so the omelette rolls off, folding itself onto the plate. The two edges will be tucked underneath."], ["date", "2015-05-21 23:47:51.155486"], ["ingredients", "Ingredients for Omelette"], ["duration", "20 mins"], ["stars", 0], ["num_reviews", 0], ["user_id", 14]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("title", "photo_url", "instruction", "date", "ingredients", "duration", "stars", "num_reviews", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "THAI CHICKEN CURRY"], ["photo_url", "http://www.epicurious.com/images/recipesmenus/2013/2013_january/51140410.jpg"], ["instruction", "Heat oil in a large heavy pot over medium heat. Add curry paste and cook, stirring, until fragrant, about 1 minute. Add carrots, onion, and pepper and cook, stirring occasionally, until onion is translucent, about 10 minutes.\n\nAdd potatoes, chicken, coconut milk, and 1 1/2 cups water and bring to a boil. Reduce heat to a simmer and cook, stirring occasionally, until chicken is cooked through and potatoes are tender, about 20 minutes. Divide curry among bowls and top with herbs."], ["date", "2015-05-21 23:47:51.156039"], ["ingredients", "Ingredients for Thai chicken curry"], ["duration", "20 mins"], ["stars", 0], ["num_reviews", 0], ["user_id", 14]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("title", "comment", "stars", "date", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["title", "This is cool"], ["comment", "The Food is really delicious."], ["stars", 4], ["date", "2015-05-21 23:47:51.170682"], ["recipe_id", 54], ["user_id", 14]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("title", "comment", "stars", "date", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "This is bad!"], ["comment", "This isn't a good recipe."], ["stars", 1], ["date", "2015-05-21 23:47:51.171545"], ["recipe_id", 54], ["user_id", 14]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("title", "comment", "stars", "date", "recipe_id", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["title", "I love it!"], ["comment", "OMG, that is purely delicious"], ["stars", 5], ["date", "2015-05-21 23:47:51.172134"], ["recipe_id", 54], ["user_id", 14]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mTag Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = 'breakfast' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "breakfast"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mTag Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = 'egg' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "egg"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mTag Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = 'sweet' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "sweet"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1[0m
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY "recipes"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("recipe_id", "tag_id") VALUES (?, ?)[0m  [["recipe_id", 54], ["tag_id", 61]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("recipe_id", "tag_id") VALUES (?, ?)  [["recipe_id", 54], ["tag_id", 62]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories" ("recipe_id", "tag_id") VALUES (?, ?)[0m  [["recipe_id", 54], ["tag_id", 63]]
+  [1m[35m (0.8ms)[0m  commit transaction
+
+
+Started GET "/" for ::1 at 2015-05-21 18:48:18 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 19.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:48:19 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:48:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uce14zPI/F1ePAwjwIUBXoH/DtjSDuF1FNliNQyQacDtFu7lb23yNpJsVPVezd6qBaH2PLZEGIJebMgJbcM0IA==", "user_name"=>"First User", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+LoadError (cannot load such file -- bcrypt):
+  app/models/user.rb:3:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/sessions_controller.rb:7:in `create'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (78.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:48:56 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 152ms (Views: 143.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:48:58 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:49:08 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fS01u2F6SFrqjTEtweklXFlui1SOO/NFSKEjxSqjYATB/G69Pd9GMSbdaftfofqo3TBzsOpxCrICFIn5S/A95A==", "user_name"=>"First User", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "First User"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 54ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:49:08 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:49:34 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"feEB7yT8UTRwWajOykhaysNSCJcndCfOXeYbKxpQWSHBMFrpeFlfX7wJ8BhUAIU+Rwzwc0M+3jkXU7EXewMEwQ==", "user_name"=>"First User", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "First User"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:49:34 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:50:32 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B37skYMdHKkvlxIPU7uf8n1OyPfI4kwT4HGRSWWO1AW7r7eX37gSwuPHStnN80AG+RAwE6yoteSqxDt1BN2J5Q==", "user_name"=>"First User", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "First User"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:50:32 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:51:05 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:51:10 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NtipDGIgQM5cnuYeSvSRtYEMd4wX4fCM7Dr2vHQqjlKKCfIKPoVOpZDOvsjUvE5BBVKPaHOrCXumj1yAFXnTsg==", "user_name"=>"First User", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "First User"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:51:10 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 18:52:06 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 18:52:11 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IqmfE4FKzSOAURHlSr0x3G5ZXMQUPldyLc2e8qF+jWaeeMQV3e/DSEwBSTPU9e4o6gekIHB0roVneDTOwC3Qhg==", "user_name"=>"First User", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "First User"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 73ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 18:52:11 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 14]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 18.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 19:40:47 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 22.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 19:40:50 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-21 19:40:53 -0500
+
+SyntaxError (/Users/liusen/work/courses/web/final/app/controllers/users_controller.rb:3: syntax error, unexpected ':', expecting keyword_end
+  before_filter: authorize, only: [:show]
+                ^):
+  app/controllers/users_controller.rb:3: syntax error, unexpected ':', expecting keyword_end
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (80.3ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-21 19:40:53 -0500
+
+SyntaxError (/Users/liusen/work/courses/web/final/app/controllers/users_controller.rb:3: syntax error, unexpected ':', expecting keyword_end
+  before_filter: authorize, only: [:show]
+                ^):
+  app/controllers/users_controller.rb:3: syntax error, unexpected ':', expecting keyword_end
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (38.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (81.4ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-21 19:41:48 -0500
+
+SyntaxError (/Users/liusen/work/courses/web/final/app/controllers/users_controller.rb:3: syntax error, unexpected ':', expecting keyword_end
+  before_action: authorize, only: [:show]
+                ^):
+  app/controllers/users_controller.rb:3: syntax error, unexpected ':', expecting keyword_end
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (34.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (77.3ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-21 19:42:00 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 22.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2015-05-21 19:42:10 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pz79Be2TovZ8Eckem6RqR7sedtg3Mv+42XZicpQ5whioPyQWHHIXhQAvwCAovoUy6fkklrSkwT1fwT6sNfW/Zw==", "user_name"=>"ls", "password"=>"[FILTERED]", "email"=>"a", "gender"=>"Mail", "photo_url"=>"asdf", "background"=>"baew", "commit"=>"Sign Me Up!"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'ls' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'a' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "email", "gender", "create_date", "photo_url", "background") VALUES (?, ?, ?, ?, ?, ?, ?)  [["user_name", "ls"], ["password_digest", "$2a$10$HQvZQi/7cJ5jXmylA.B.Le1w4WBd0IAKeuuGNTQfuctLUgP8gdfLa"], ["email", "a"], ["gender", "Mail"], ["create_date", "2015-05-22 00:42:10.523776"], ["photo_url", "asdf"], ["background", "baew"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 84ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 19:42:10 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 19.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 19:42:11 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 19:42:14 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3anJv7NvCjWgJQVJv5sZyxl8tkF0U11GmtQvKzHdbJ3SqBCsQo6/RtwbDHcMgfa+S5vkD/fFY8McY3P1kBER4g==", "user_name"=>"ls", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "ls"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 68ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 19:42:14 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-21 19:42:16 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/logout" for ::1 at 2015-05-21 19:42:18 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 19:42:18 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 19:43:28 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-21 19:43:30 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-05-21 19:43:44 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mfhF/O981FNtc6GE0PiDCD+wSdSA6QSNZlCVhO2pBj2W+ZzvHp1hIBFNqLpj4mx9bVcbmgN/Ogjg58laTGV7Qg==", "user_name"=>"test", "password"=>"[FILTERED]", "email"=>"asfwef", "gender"=>"Male", "photo_url"=>"fweo", "background"=>"wfa", "commit"=>"Sign Me Up!"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'test' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'asfwef' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "email", "gender", "create_date", "photo_url", "background") VALUES (?, ?, ?, ?, ?, ?, ?)  [["user_name", "test"], ["password_digest", "$2a$10$l4vLdewX4Ll.sP2Tc0raluQei1wH9JtXd6JRYh5bPePlSNgGcLgmq"], ["email", "asfwef"], ["gender", "Male"], ["create_date", "2015-05-22 00:43:45.011117"], ["photo_url", "fweo"], ["background", "wfa"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 69ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 19:43:45 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-21 19:43:46 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-21 19:43:47 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-21 19:43:50 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/ghUomOLJDXM8e+Rb62nlYO80Mf8drq+0fHIUVvtm7fxCY2xkmqRRrDP5q/ct0jg0VuCiX/ghDtXRpSP+iHmyA==", "user_name"=>"test", "password"=>"[FILTERED]", "commit"=>"Sign IN"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "test"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 67ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-21 19:43:50 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 17]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/55" for ::1 at 2015-05-21 19:43:52 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"55"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 55]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 55]]
+  Rendered recipes/show.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 17]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 24.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-21 19:43:56 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 17]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/55" for ::1 at 2015-05-21 19:43:59 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"55"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 55]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 55]]
+  Rendered recipes/show.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 17]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for ::1 at 2015-05-21 19:44:01 -0500
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 17]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/recipes" for ::1 at 2015-05-21 19:44:07 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mjqU4sVmIP1fhExJ0VC0YwvcDE/BIH7BT5vyBySl1uyVO03xNIeVjiO6RXdiSlsWWTteAUK2QETJLK7ZhWmrkw==", "title"=>"fwef", "photo_url"=>"wef", "ingredients"=>"gw", "instruction"=>"s", "duration"=>"20", "commit"=>"Add Recipe"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("title", "photo_url", "ingredients", "instruction", "duration", "date", "stars", "num_reviews", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "fwef"], ["photo_url", "wef"], ["ingredients", "gw"], ["instruction", "s"], ["duration", "20"], ["date", "2015-05-22 00:44:07.314509"], ["stars", 0], ["num_reviews", 0], ["user_id", 17]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-21 19:44:07 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 17]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/57" for ::1 at 2015-05-21 19:44:10 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 57]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 57]]
+  Rendered recipes/show.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 17]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/wef" for ::1 at 2015-05-21 19:44:10 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/wef"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (72.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (31.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (75.5ms)
+
+
+Started GET "/recipes/57" for ::1 at 2015-05-21 19:44:37 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 57]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 57]]
+  Rendered recipes/show.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 17]]
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/wef" for ::1 at 2015-05-21 19:44:37 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/wef"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (60.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (37.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (82.4ms)
+
+
+Started GET "/recipes/57/edit" for ::1 at 2015-05-21 19:44:42 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"57"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 57]]
+  Rendered recipes/edit.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 17]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/recipes/57" for ::1 at 2015-05-21 19:44:48 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iU6iTboPixQ7pf5e5x+VnJ7xPplfXp7h8uXj8JqjPSeGT3teS+4+Z0eb92BUBXrpzBZs19zIoGR0Ur8uO29AWA==", "title"=>"fwef", "photo_url"=>"wef", "instruction"=>"sfweeeffffff", "commit"=>"Update recipe", "id"=>"57"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 57]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "recipes" SET "date" = ?, "instruction" = ? WHERE "recipes"."id" = ?  [["date", "2015-05-22 00:44:48.486399"], ["instruction", "sfweeeffffff"], ["id", 57]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-21 19:44:48 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 17]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/57" for ::1 at 2015-05-21 19:44:49 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 57]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 57]]
+  Rendered recipes/show.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 17]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/wef" for ::1 at 2015-05-21 19:44:49 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/wef"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (57.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (39.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (76.9ms)
+
+
+Started DELETE "/recipes/57" for ::1 at 2015-05-21 19:45:01 -0500
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8CxC4Tn+skkNeOQHJ5KRwW1OVSW+0IYfjWVGTN2+iZL/LZvyyB8HOnFG7TmUiH60P6kHaz1GuJoL0hqSfHL07Q==", "id"=>"57"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 57]]
+  [1m[36mSQL (1.7ms)[0m  [1mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 57]]
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 3ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/recipes" for ::1 at 2015-05-21 19:45:01 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 17]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.3ms)

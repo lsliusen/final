@@ -23,20 +23,8 @@
   </p>
   <p>
   <%= label_tag :Gender %>
-  <%= select_tag :gender, options_for_select(["Female","Mail"]) %>
+  <%= select_tag :gender, options_for_select(["Female","Male"]) %>
   </p>
-  <!--
-  <p>
-    <label>Gender: </label>
-    <select name="gender">
-      <% if @user.gender.present? %>
-        <option selected="selected"><%= @user.gender %></option>
-      <% end %>
-      <option>Female</option>
-      <option>Male</option>
-    </select>
-    </p>
-    -->
   <p>
     <%= label_tag :photo_url %>
     <%= text_field_tag :photo_url, @user.photo_url %>

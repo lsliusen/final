@@ -32,5 +32,5 @@ User
   create_date: datetime
   photo_url: string
   background: string
-  password: string
+  password_digest: string
 

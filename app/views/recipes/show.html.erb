@@ -1,6 +1,6 @@
 <h2><%= @recipe.title %></h2>
 
-<% if session["user_id"] == @recipe.user_id.to_s %>
+<% if session["user_id"] == @recipe.user_id.to_i %>
   <%= link_to "(Edit...)", "/recipes/#{@recipe.id}/edit" %>
   <%= link_to "(Delete Recipe)", "/recipes/#{@recipe.id}", :method => 'delete' %>
 <% end %>

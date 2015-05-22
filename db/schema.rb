@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "create_date"
     t.string   "photo_url"
     t.string   "background"
-    t.string   "password"
+    t.string   "password_digest"
   end
 
 end

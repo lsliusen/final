@@ -1,4 +1,6 @@
-<p><%= link_to "Add a New recipe", "/recipes/new" %></p>
+<% if session[:user_id].present? %>
+    <p><%= link_to "Add a New recipe", "/recipes/new" %></p>
+<% end %>
 
 <p><%= @recipes.count %> recipes.</p>
 

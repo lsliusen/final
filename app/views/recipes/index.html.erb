@@ -9,7 +9,7 @@
     <th>Title</th>
     <th>Date</th>
     <th>Rating</th>
-  </tr>
+</tr>
   <% @recipes.each do |recipe| %>
     <tr>
       <td><%= link_to recipe.title, recipe_url(recipe.id) %></td>
@@ -24,8 +24,9 @@
         </td>
     </tr>
   <% end %>
-  
 </table>
+<%= will_paginate @recipes, :class=>"flickr_pagination" %>
+<br>
 
 <% if @tags.present? %>
   <h5>Tags</h5>

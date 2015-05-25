@@ -37,6 +37,7 @@ class RecipesController < ApplicationController
             rcp.stars = 0
         end
 =end
+    @recipes = @recipes.paginate(:page => params[:page], :per_page => 2)
     end
   end
 

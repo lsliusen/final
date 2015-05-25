@@ -6,7 +6,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find_by(id: params[:id])
-    @recipes = @tag.recipes
+    @recipes = @tag.recipes.paginate(:page => params[:page], :per_page => 1)
   end
 
   def new
@@ -16,3 +16,4 @@ class TagsController < ApplicationController
   end
 
 end
+

@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'ez'
 gem 'quiet_assets'
 gem 'bcrypt'
+gem 'will_paginate', '~> 3.0.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

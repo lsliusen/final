@@ -17951,3 +17951,1016 @@ ActionController::RoutingError (No route matches [GET] "/images/b"):
   Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (85.8ms)
+
+
+Started GET "/recipes/70" for ::1 at 2015-05-25 17:05:55 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"70"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 70]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "categories" ON "tags"."id" = "categories"."tag_id" WHERE "categories"."recipe_id" = ?[0m  [["recipe_id", 70]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 70]]
+  Rendered recipes/show.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 61ms (Views: 36.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/images/b" for ::1 at 2015-05-25 17:05:56 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/b"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (71.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (92.8ms)
+
+
+Started GET "/" for ::1 at 2015-05-25 17:05:56 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `paginate' for #<Recipe::ActiveRecord_Relation:0x007fc8b98bfe78>):
+  app/controllers/recipes_controller.rb:40:in `block in index'
+  app/controllers/recipes_controller.rb:32:in `index'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (40.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (87.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-25 17:05:57 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `paginate' for #<Recipe::ActiveRecord_Relation:0x007fc8b8353f58>):
+  app/controllers/recipes_controller.rb:40:in `block in index'
+  app/controllers/recipes_controller.rb:32:in `index'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (81.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-25 17:06:45 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.6ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 30 OFFSET 0
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (13.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 258ms (Views: 216.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-25 17:07:16 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 0
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (8.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 66ms (Views: 51.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:07:20 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (4.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?page=3" for ::1 at 2015-05-25 17:07:21 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 4
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 36.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:07:23 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (1.1ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (5.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 42.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:07:24 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 0
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (10.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:07:26 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=3" for ::1 at 2015-05-25 17:07:27 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 4
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (2.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:07:29 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=3" for ::1 at 2015-05-25 17:07:31 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 4
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (2.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:07:32 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:07:33 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 0
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?page=3" for ::1 at 2015-05-25 17:07:47 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 4
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:07:48 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:14:16 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (4.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 150ms (Views: 146.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:15:12 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 26.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:15:14 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:15:23 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (4.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:15:32 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 32.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:16:15 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (2.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:16:55 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 1 OFFSET 1
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (7.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 36.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:17:01 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 1 OFFSET 0
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (4.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:17:49 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 1 OFFSET 0
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:20:18 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 1 OFFSET 0
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:20:59 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 1 OFFSET 1
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=3" for ::1 at 2015-05-25 17:21:01 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 1 OFFSET 2
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:21:02 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 1 OFFSET 0
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:23:11 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 1 OFFSET 0
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:23:25 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:23:49 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mRecipe Load (0.7ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (5.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 52ms (Views: 33.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:24:06 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 44.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:24:10 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=3" for ::1 at 2015-05-25 17:24:11 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 4[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered recipes/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:24:12 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered recipes/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:24:24 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered recipes/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=1" for ::1 at 2015-05-25 17:24:37 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered recipes/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes/55" for ::1 at 2015-05-25 17:26:28 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"55"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 55]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "categories" ON "tags"."id" = "categories"."tag_id" WHERE "categories"."recipe_id" = ?[0m  [["recipe_id", 55]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 55]]
+  Rendered recipes/show.html.erb within layouts/application (15.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 94ms (Views: 43.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/recipes/70" for ::1 at 2015-05-25 17:26:30 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"70"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 70]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "categories" ON "tags"."id" = "categories"."tag_id" WHERE "categories"."recipe_id" = ?[0m  [["recipe_id", 70]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 70]]
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/b" for ::1 at 2015-05-25 17:26:30 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/b"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/liusen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (78.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (95.9ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:26:33 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered recipes/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=3" for ::1 at 2015-05-25 17:26:35 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 4
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (2.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?page=2" for ::1 at 2015-05-25 17:26:36 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY title asc[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes/54" for ::1 at 2015-05-25 17:26:52 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"54"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 54]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "categories" ON "tags"."id" = "categories"."tag_id" WHERE "categories"."recipe_id" = ?  [["recipe_id", 54]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 54]]
+  Rendered recipes/show.html.erb within layouts/application (15.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tags/62" for ::1 at 2015-05-25 17:26:53 -0500
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"62"}
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 62]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ? LIMIT 2 OFFSET 0[0m  [["tag_id", 62]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  Rendered tags/show.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (The @tags variable appears to be empty. Did you forget to pass the collection object for will_paginate?):
+    29:   <% end %>
+    30: 
+    31: </table>
+    32: <%= will_paginate @posts, :class=>"flickr_pagination" %>
+    33: <br>
+  app/views/tags/show.html.erb:32:in `_app_views_tags_show_html_erb__4242484356428077112_70217564831900'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (81.6ms)
+
+
+Started GET "/tags/62" for ::1 at 2015-05-25 17:26:53 -0500
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"62"}
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 62]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ? LIMIT 2 OFFSET 0[0m  [["tag_id", 62]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  Rendered tags/show.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (The @tags variable appears to be empty. Did you forget to pass the collection object for will_paginate?):
+    29:   <% end %>
+    30: 
+    31: </table>
+    32: <%= will_paginate @posts, :class=>"flickr_pagination" %>
+    33: <br>
+  app/views/tags/show.html.erb:32:in `_app_views_tags_show_html_erb__4242484356428077112_70217499665480'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (37.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (89.0ms)
+
+
+Started GET "/tags/62" for ::1 at 2015-05-25 17:27:39 -0500
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"62"}
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 62]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ? LIMIT 2 OFFSET 0[0m  [["tag_id", 62]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  Rendered tags/show.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (The @tags variable appears to be empty. Did you forget to pass the collection object for will_paginate?):
+    29:   <% end %>
+    30: 
+    31: </table>
+    32: <%= will_paginate @posts, :class=>"flickr_pagination" %>
+    33: <br>
+  app/views/tags/show.html.erb:32:in `_app_views_tags_show_html_erb__4242484356428077112_70217499665480'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.9ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (78.1ms)
+
+
+Started GET "/tags/62" for ::1 at 2015-05-25 17:27:40 -0500
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"62"}
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 62]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ? LIMIT 2 OFFSET 0[0m  [["tag_id", 62]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  Rendered tags/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (The @tags variable appears to be empty. Did you forget to pass the collection object for will_paginate?):
+    29:   <% end %>
+    30: 
+    31: </table>
+    32: <%= will_paginate @posts, :class=>"flickr_pagination" %>
+    33: <br>
+  app/views/tags/show.html.erb:32:in `_app_views_tags_show_html_erb__4242484356428077112_70217499665480'
+
+
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (44.8ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (38.5ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liusen/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (80.7ms)
+
+
+Started GET "/tags/62" for ::1 at 2015-05-25 17:28:05 -0500
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"62"}
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 62]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ? LIMIT 2 OFFSET 0[0m  [["tag_id", 62]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  Rendered tags/show.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tags/62" for ::1 at 2015-05-25 17:28:17 -0500
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"62"}
+  [1m[35mTag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1  [["id", 62]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?[0m  [["tag_id", 62]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ? LIMIT 1 OFFSET 0  [["tag_id", 62]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?[0m  [["tag_id", 62]]
+  Rendered tags/show.html.erb within layouts/application (7.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 35.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tags/62?page=2" for ::1 at 2015-05-25 17:28:19 -0500
+Processing by TagsController#show as HTML
+  Parameters: {"page"=>"2", "id"=>"62"}
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 62]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ? LIMIT 1 OFFSET 1[0m  [["tag_id", 62]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  Rendered tags/show.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tags/62?page=1" for ::1 at 2015-05-25 17:28:21 -0500
+Processing by TagsController#show as HTML
+  Parameters: {"page"=>"1", "id"=>"62"}
+  [1m[35mTag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1  [["id", 62]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?[0m  [["tag_id", 62]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ? LIMIT 1 OFFSET 0  [["tag_id", 62]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?[0m  [["tag_id", 62]]
+  Rendered tags/show.html.erb within layouts/application (2.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/54" for ::1 at 2015-05-25 17:28:29 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"54"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 54]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "categories" ON "tags"."id" = "categories"."tag_id" WHERE "categories"."recipe_id" = ?  [["recipe_id", 54]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 54]]
+  Rendered recipes/show.html.erb within layouts/application (6.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 33.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tags/62" for ::1 at 2015-05-25 17:28:30 -0500
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"62"}
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 62]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ? LIMIT 1 OFFSET 0[0m  [["tag_id", 62]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 62]]
+  Rendered tags/show.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/54" for ::1 at 2015-05-25 17:28:31 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"54"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 54]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "categories" ON "tags"."id" = "categories"."tag_id" WHERE "categories"."recipe_id" = ?[0m  [["recipe_id", 54]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc  [["recipe_id", 54]]
+  Rendered recipes/show.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tags/63" for ::1 at 2015-05-25 17:28:32 -0500
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"63"}
+  [1m[35mTag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1  [["id", 63]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?[0m  [["tag_id", 63]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ? LIMIT 1 OFFSET 0  [["tag_id", 63]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?[0m  [["tag_id", 63]]
+  Rendered tags/show.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/54" for ::1 at 2015-05-25 17:28:33 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"54"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 54]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "categories" ON "tags"."id" = "categories"."tag_id" WHERE "categories"."recipe_id" = ?  [["recipe_id", 54]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = ?  ORDER BY date desc[0m  [["recipe_id", 54]]
+  Rendered recipes/show.html.erb within layouts/application (2.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tags/61" for ::1 at 2015-05-25 17:28:34 -0500
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"61"}
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT 1[0m  [["id", 61]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 61]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ? LIMIT 1 OFFSET 0[0m  [["tag_id", 61]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "categories" ON "recipes"."id" = "categories"."recipe_id" WHERE "categories"."tag_id" = ?  [["tag_id", 61]]
+  Rendered tags/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-25 17:28:35 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered recipes/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?page=3" for ::1 at 2015-05-25 17:28:37 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY title asc
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY title asc LIMIT 2 OFFSET 4
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered recipes/index.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.6ms)

@@ -1,5 +1,23 @@
 class ReviewsController < ApplicationController
 
+  before_action :require_user, :only =>[:create, :destroy]
+  before_action :authorize, :only =>[:destroy]
+
+  def require_user
+    if !session[:user_id].present?
+      redirect_to root_path, notice: "Please sign in first."
+      return
+    end
+  end
+
+  def authorize
+    @recipe = Review.find_by(:id => params[:id]).recipe
+    if @recipe.user_id != session[:user_id]
+      redirect_to root_path, notice: "Operation not authorized."
+      return
+    end
+  end
+
   def create
     @review = Review.new
     @review.title = params[:title]

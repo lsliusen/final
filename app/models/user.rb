@@ -11,6 +11,5 @@ class User < ActiveRecord::Base
 	validates_presence_of :email
 	validates_presence_of :gender
 	validates_presence_of :create_date
-    validates_presence_of :password
     validates_presence_of :photo_url
 end

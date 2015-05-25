@@ -1,4 +1,12 @@
-<!-- <form action="/recipes/<%= @recipe.id %>/update"> -->
+
+<% if @recipe.errors.any? %>
+  <ul>
+  <% @recipe.errors.full_messages.each do |msg|%>
+    <li><%= msg %></li>
+  <%end%>
+  </ul>
+<%end%>
+
 <%= form_tag "/recipes/#{@recipe.id}", :method => 'patch' do %>
 
   <div>
@@ -8,9 +16,21 @@
 
   <div>
     <label for="photo_url">Link to Photo:</label>
-    <input size="40" name="photo_url" value="<%= @recipe.photo_url %>" id="photo_url" type="url">
+    <input size="40" name="photo_url" value="<%= @recipe.photo_url %>" id="photo_url">
   </div>
 
+  <% puts @marked %>
+<% if @tags.present? %>
+  <% @tags.each do |tag| %>
+  <div>
+    <%= label_tag tag.name %>
+    <% puts "!!!!!!!!!!!!!!!" %>
+    <% puts @marked[tag.id].present? %>
+    <%= check_box_tag "TagID#{tag.id}", tag.name, @marked[tag.id].present? %>
+  </div>
+<% end %>
+<% end %>
+ 
   <div>
       <textarea cols="80" rows="5" name="instruction"><%= @recipe.instruction %></textarea>
   </div>

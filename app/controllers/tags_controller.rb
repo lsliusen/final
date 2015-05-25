@@ -5,7 +5,8 @@ class TagsController < ApplicationController
   end
 
   def show
-    @recipes = Tag.find_by(id: params[:id]).recipes
+    @tag = Tag.find_by(id: params[:id])
+    @recipes = @tag.recipes
   end
 
   def new

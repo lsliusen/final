@@ -28,6 +28,17 @@
 <%= "(#{@recipe.num_reviews} reviews)" %>
 
 </p>
+  <% if @tags.present? %>
+  <h5>Tags</h5>
+  <% @tags.each do |tag| %>
+  	<ul>
+  		<li>
+  			<%= link_to tag.name, tag_url(tag.id) %>
+  		</li>
+  	</ul>
+  <% end %>
+  <% end %>
+
 
 <%= image_tag @recipe.photo_url %>
 

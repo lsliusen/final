@@ -34,7 +34,15 @@ Rails.application.routes.draw do
   resources :tags
 
   get "/signup" => 'users#new'
+  patch "/users/:id" => 'users#update'
+  get "/users/:id" => 'users#show'
   post "/users" => 'users#create'
+
+  get "/users/:id/edit" => 'users#edit'
+  patch "/change_password/:id" => 'users#update_password'
+  get "/change_password/:id/edit_password" => 'users#edit_password'
+  get "/forget_password" => 'users#forget_password'
+  post "/forget_password" => 'users#send_password'
 
   get "/login" => 'sessions#new'
   post "/sessions" => 'sessions#create'

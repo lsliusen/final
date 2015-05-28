@@ -14,13 +14,18 @@
 
   <h1><%= link_to "Recipes", "/" %>
 
+  <div class="pull-right">
   <% if session["user_id"].present? %>
+      <% puts session["user_id"] %>
+      <% puts "!!!!!!!!!" %>
     <small>Hello, <%= User.find_by(id: session["user_id"]).user_name %></small>
     <small><%= link_to "Sign Out", '/logout' %></small>
+    <small><%= link_to "Profile", "/users/#{session["user_id"]}" %></small>
   <% else %>
     <small><%= link_to "Sign Up", '/signup' %></small>
     <small><%= link_to "Sign In", '/login' %></small>
-  <% end %>
+<% end %>
+</div>
 
     <!-- TODO : add 'cook' details
     <small><%= link_to "Recipes", '/recipes' %></small>

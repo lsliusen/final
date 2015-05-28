@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
 
-  before_action :find_recipe, :only => [:show, :edit, :update, :destroy]
+  before_action :find_recipe, :only => [:show, :edit, :update, :destroy, :authorize]
   before_action :require_user, :only => [:new, :create, :edit, :update, :destroy]
   before_action :authorize, :only => [:edit, :update, :destroy]
   before_action :find_tags, :only =>[:index, :edit, :update, :new, :create]
@@ -28,7 +28,12 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.order('title asc')
+    if params["keyword"].present?
+      @recipes = Recipe.where("title LIKE ?", "%#{params[:keyword]}%")
+    else
+      @recipes = Recipe.all
+    end
+    @recipes = @recipes.order('title asc')
     @recipes.each do |rcp|
         rcp.date = rcp.date.getlocal.strftime("%Y-%m-%d %H:%M:%S")
 =begin
@@ -37,8 +42,8 @@ class RecipesController < ApplicationController
             rcp.stars = 0
         end
 =end
-    @recipes = @recipes.paginate(:page => params[:page], :per_page => 2)
     end
+    @recipes = @recipes.paginate(:page => params[:page], :per_page => 2)
   end
 
   def show

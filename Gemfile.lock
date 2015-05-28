@@ -72,6 +72,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mailfactory (1.4.0)
+      mime-types (>= 1.13.1)
     mime-types (2.5)
     mini_portile (0.6.2)
     minitest (5.6.1)
@@ -154,6 +156,7 @@ DEPENDENCIES
   ez
   jbuilder (~> 2.0)
   jquery-rails
+  mailfactory
   quiet_assets
   rails (= 4.2.1)
   sass-rails (~> 5.0)

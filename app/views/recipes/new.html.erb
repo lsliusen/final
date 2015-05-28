@@ -18,10 +18,9 @@
 </div>
 <% if @tags.present? %>
   <% @tags.each do |tag| %>
-  <div>
     <%= label_tag tag.name %>
     <%= check_box_tag "TagID#{tag.id}", tag.name %>
-  </div>
+    &nbsp;
 <% end %>
 <% end %>
   <div>

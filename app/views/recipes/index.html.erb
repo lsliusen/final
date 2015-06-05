@@ -1,10 +1,10 @@
 <% if session[:user_id].present? %>
-    <p><%= link_to "Add a New recipe", "/recipes/new" %></p>
+  <p><%= link_to "Add a New recipe", "/recipes/new" %></p>
 <% end %>
 
 <%= form_tag recipes_url, :method => "get" do %>
-    <%= text_field_tag :keyword %>
-    <%= submit_tag "Search" %>
+  <%= text_field_tag :keyword %>
+  <%= submit_tag "Search" %>
 <% end %>
 
 <% if @tags.present? %>
@@ -12,8 +12,7 @@
   <% @tags.each do |tag| %>
     <%= link_to tag.name+" ", tag_url(tag.id) %>|
   <% end %>
-  <% end %>
-
+<% end %>
 
 <p><%= @recipes.count %> recipes.</p>
 
@@ -23,7 +22,7 @@
     <th>User</th>
     <th>Date</th>
     <th>Rating</th>
-</tr>
+  </tr>
   <% @recipes.each do |recipe| %>
     <tr>
       <td><%= link_to recipe.title, recipe_url(recipe.id) %></td>
@@ -36,7 +35,7 @@
         <% (5 - recipe.stars).times do %>
           &#9734;
         <% end %>
-        </td>
+      </td>
     </tr>
   <% end %>
 </table>

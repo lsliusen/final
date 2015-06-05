@@ -15,17 +15,17 @@
   <div>
     <%= label_tag :photo_url %>
     <%= text_field_tag :photo_url, @recipe.photo_url, placeholder: 'Example: http://pic_url' %>
-</div>
+  </div>
 
-<% if @tags.present? %>
-  <% @tags.each do |tag| %>
-    <%= label_tag tag.name %>
-    <%= check_box_tag "TagID#{tag.id}", tag.name, @marked[tag.id].present? %>
-    &nbsp;
-<% end %>
-<% end %>
+  <% if @tags.present? %>
+    <% @tags.each do |tag| %>
+      <%= label_tag tag.name %>
+      <%= check_box_tag "TagID#{tag.id}", tag.name, @marked[tag.id].present? %>
+      &nbsp;
+    <% end %>
+  <% end %>
 
-   <div>
+  <div>
     <%= label_tag :ingredients %><br>
     <%= text_area_tag :ingredients, @recipe.ingredients, size: "60x10", placeholder: 'Add ingredients here...' %>
   </div>
@@ -39,7 +39,7 @@
   </div>
 
   <div>
-      <%= submit_tag "Add Recipe" %>
+    <%= submit_tag "Update Recipe" %>
   </div>
 
 <% end %>

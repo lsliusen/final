@@ -29,7 +29,11 @@ class UsersController < ApplicationController
     @user.email = params[:email]
     @user.gender = params[:gender]
     @user.create_date = Time.now
-    @user.photo_url = params[:photo_url]
+    if params[:photo_url].present? && params[:photo_url] != ""
+      @user.photo_url = params[:photo_url]
+    else
+      @user.photo_url = "default-user-image.png"
+    end
     @user.background = params[:background]
     if params[:password] != params[:confirm_password]
       flash[:notice] = "Two passwords do not match."
@@ -62,8 +66,8 @@ class UsersController < ApplicationController
       render "edit"
     end
   end
+
   def edit_password
-  
   end
 
   def update_password
@@ -114,20 +118,18 @@ class UsersController < ApplicationController
     end
 
     mail = MailFactory.new
-    mail.from = "noreply@recipe.com"
     mail.to = to
     mail.subject = "New password of your Recipe account"
-    mail.text = "Dear #{user.user_name},\n\nYour new password is #{user.password}.\n\nRecipe.com"
-    host = "smtp.mandrillapp.com"
-    port = 587
-    sender = "lsliusen1986@gmail.com"
-    #sender = ENV["RECIPE_MAIL_SENDER"]
-    #port = ENV["RECIPE_MAIL_PORT"]
-    #host = ENV["RECIPE_MAIL_HOST"]
-    #mail.from = ENV["RECIPE_MAIL_FROM"]
-    key = "lPYuVe53FBSZfTFaGuS9-w"
+    mail.text = "Dear #{user.user_name},\n\nYour new password is #{user.password} .\n\nRecipe.com"
+
+    sender = ENV["RECIPE_MAIL_SENDER"]
+    port = ENV["RECIPE_MAIL_PORT"].to_i
+    host = ENV["RECIPE_MAIL_HOST"]
+    mail.from = ENV["RECIPE_MAIL_FROM"]
+    key = ENV["RECIPE_MAIL_KEY"]
+
     Net::SMTP.start(host,port,'mandrillapp.com',sender,key) do |smtp|
-      smtp.send_message(mail.to_s,sender,"samliu@uchicago.edu")
+      smtp.send_message(mail.to_s,sender,to)
     end
     redirect_to root_path, notice: "A new password has been sent to your email address."
     return

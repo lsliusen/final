@@ -7,9 +7,9 @@
 
 <% if @review.errors.present? %>
 <ul>
-    <% @review.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-    <%end%>
+  <% @review.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <%end%>
 </ul>
 
 <% end %>
@@ -23,67 +23,66 @@
   <% end %>
   <% (5 - @recipe.stars).times do %>
     &#9734;
-<% end %>
-<%= "(#{@recipe.num_reviews} reviews)" %>
-
+  <% end %>
+  <%= "(#{@recipe.num_reviews} reviews)" %>
 </p>
-  <% if @tags.present? %>
-      <h5>Tags</h5>
-      <p>
+
+<% if @tags.present? %>
+  <h5>Tags</h5>
+  <p>
   <% @tags.each do |tag| %>
     <%= link_to tag.name+" ", tag_url(tag.id) %>|
   <% end %>
-  <% end %>
   </p>
+<% end %>
 
+<%= image_tag @recipe.photo_url, :class=>"recipe_img" %>
+<h4>Posted by:</h4>
+<%= image_tag @recipe.user.photo_url, :class => "small_user_img" %>
 
-  <%= image_tag @recipe.photo_url, :class=>"recipe_img" %>
-  <h4>Posted by:</h4>
-  <%= image_tag @recipe.user.photo_url, :class => "small_user_img" %>
-
-  <h4>Instructions:</h4>
+<h4>Instructions:</h4>
 <p><%= @recipe.instruction %></p>
 
 <% if @reviews.present? %>
-    <h3>comments</h3>
-<table>
+  <h3>comments</h3>
+  <table>
     <% @reviews.each do |review| %>
-        <tr>
-            <% (review.stars).times do %>
-                &#9733;
-            <%end%>
-            <strong><%= review.title %></strong>
-            (<%= review.date %>)
-            <% if session["user_id"].present? and session["user_id"].to_i==review.user_id %>
-                <%= link_to "(Delete)", delete_review_path(:id => review.id, :recipe_id => @recipe.id), :method => :delete  %>
-            <%end%>
-            <br>
-            <%= review.comment %>
-        </tr>
+      <tr>
+        <% (review.stars).times do %>
+          &#9733;
+        <%end%>
+        <strong><%= review.title %></strong>
+        (<%= review.date %>)
+        <% if session["user_id"].present? and session["user_id"].to_i==review.user_id %>
+          <%= link_to "(Delete)", delete_review_path(:id => review.id, :recipe_id => @recipe.id), :method => :delete  %>
+        <%end%>
         <br>
-        <br>
+        <%= review.comment %>
+      </tr>
+      <br>
+      <br>
     <%end%>
-</table>
+  </table>
 <% end %>
 
 <%= form_tag "/reviews" do%>
-    <%= hidden_field_tag :recipe_id, @recipe.id %>
-    <div>
-        <%= label_tag :title %>
-        <%= text_field_tag :title, @review.title, size: '50', placeholder: 'Example: Delicious' %>
-    </div>
-    <div>
-        <%= label_tag :stars %>
-        <%= select_tag :stars, options_for_select(1..5, 1) %>
-    </div>
-    <div>
-        <%= label_tag :comment %>
-        <br>
-        <%= text_area_tag :comment, @review.comment, placeholder: "Put your comment here please.", rows: 5, cols: 80, escape: false%>
-    </div>
-    <div>
-        <%= submit_tag "Post review"%>
-    </div>
+  <%= hidden_field_tag :recipe_id, @recipe.id %>
+  <div>
+    <%= label_tag :title %>
+    <%= text_field_tag :title, @review.title, size: '50', placeholder: 'Example: Delicious' %>
+  </div>
+  <div>
+    <%= label_tag :stars %>
+    <%= select_tag :stars, options_for_select(1..5, 1) %>
+  </div>
+  <div>
+    <%= label_tag :comment %>
+    <br>
+    <%= text_area_tag :comment, @review.comment, placeholder: "Put your comment here please.", rows: 5, cols: 80, escape: false%>
+  </div>
+  <div>
+    <%= submit_tag "Post review"%>
+  </div>
 <% end %>
 
 

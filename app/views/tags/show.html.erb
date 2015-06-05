@@ -24,11 +24,11 @@
         <% (5 - recipe.stars).times do %>
           &#9734;
         <% end %>
-        </td>
+      </td>
     </tr>
   <% end %>
-
 </table>
+
 <%= will_paginate @recipes, :class=>"flickr_pagination" %>
 <br>
 

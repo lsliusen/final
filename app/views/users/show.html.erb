@@ -1,10 +1,9 @@
 <h2>My Chef Account
 <% if session["user_id"] == @user.id %>
-<%= link_to "(Edit...)", "/users/#{@user.id}/edit" %></h2>
-<%= link_to "Change Password", "/change_password/#{@user.id}/edit_password" %>
-<% else %>
-</h2>
+  <%= link_to "(Edit...)", "/users/#{@user.id}/edit" %></h2>
+  <%= link_to "Change Password", "/change_password/#{@user.id}/edit_password" %>
 <% end %>
+</h2>
 
 
 <p>
@@ -30,13 +29,13 @@
 </p>
 
 <% if @recipes.present? %>
-<% @recipes.each do |rcp| %>
-  <%= link_to rcp.title+" ", recipe_url(rcp.id) %>
-  <% if rcp.stars != 0 %>
-    (<% rcp.stars.times do %>
-      &#9733;
-    <% end %>)
-  <% end %>|
-<% end %>
+  <% @recipes.each do |rcp| %>
+    <%= link_to rcp.title+" ", recipe_url(rcp.id) %>
+    <% if rcp.stars != 0 %>
+      (<% rcp.stars.times do %>
+        &#9733;
+      <% end %>)
+    <% end %>|
+  <% end %>
 <% end %>
 

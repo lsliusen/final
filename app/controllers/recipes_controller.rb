@@ -33,17 +33,11 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.all
     end
-    @recipes = @recipes.order('title asc')
+    @recipes = @recipes.order('date desc, stars desc, title asc')
     @recipes.each do |rcp|
-        rcp.date = rcp.date.getlocal.strftime("%Y-%m-%d %H:%M:%S")
-=begin
-        review = Review.find_by_recipe_id(rcp.id)
-        if review == nil
-            rcp.stars = 0
-        end
-=end
+      rcp.date = rcp.date.getlocal.strftime("%Y-%m-%d %H:%M:%S")
     end
-    @recipes = @recipes.paginate(:page => params[:page], :per_page => 2)
+    @recipes = @recipes.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
@@ -58,25 +52,25 @@ class RecipesController < ApplicationController
 
   def new
     if !session[:user_id].present?
-        redirect_to root_path, notice: "Please sign in to share your recipe."
-        return
+      redirect_to root_path, notice: "Please sign in to share your recipe."
+      return
     end
     @recipe = Recipe.new
   end
 
   def create
-    recipe = Recipe.new
-    recipe.transaction do
-      recipe.title = params[:title]
-      recipe.photo_url = params[:photo_url]
-      recipe.ingredients = params[:ingredients]
-      recipe.instruction = params[:instruction]
-      recipe.duration = params[:duration]
-      recipe.date = Time.new()
-      recipe.stars = params[:stars].to_i
-      recipe.num_reviews = 0
-      recipe.user_id = session[:user_id]
-      recipe.save
+    @recipe = Recipe.new
+    @recipe.transaction do
+      @recipe.title = params[:title]
+      @recipe.photo_url = params[:photo_url]
+      @recipe.ingredients = params[:ingredients]
+      @recipe.instruction = params[:instruction]
+      @recipe.duration = params[:duration]
+      @recipe.date = Time.new()
+      @recipe.stars = params[:stars].to_i
+      @recipe.num_reviews = 0
+      @recipe.user_id = session[:user_id]
+      @recipe.save
       @tags.each do |tag|
         if params["TagID#{tag.id}"].present?
           ct = Category.new
@@ -86,7 +80,13 @@ class RecipesController < ApplicationController
         end
       end
     end
-    redirect_to recipes_url
+    if @recipe.errors.any?
+      #redirect_to new_recipe_url, notice: "Failed to create recipe."
+      render "new"
+      return
+    else
+      redirect_to recipes_url
+    end
   end
 
   def edit
